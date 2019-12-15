@@ -44,6 +44,9 @@ Libraries we will be using:
 - Pandas for reading csv/xlsx, creating graphs and performing descriptive statistics
 - Matplotplib for charting data and adding momentum indicatots (Bollinger bands, MACD, Stochastic RSI, RSI, Moving Average, Volume etc..)
 
-
-
-
+## Developers
+People currently involved in the project:
+- Keagan https://github.com/KeaganM
+- Espoir https://github.com/espoirMur
+- Trevor https://github.com/trevor-dev
+- Tewo 
