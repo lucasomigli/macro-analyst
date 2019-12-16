@@ -39,13 +39,14 @@ nav = dbc.Nav([
 ]
 )
 
-section1 = html.Div(
+body = dbc.Container(
     [
         dbc.Row([
             dbc.Col([
-                charts.main_chart,
+                html.Div(charts.main_chart),
                 html.Table([
-                    html.Thead(html.Tr(html.Th("Main Statistics"))),
+                    html.Thead(
+                        html.Tr(html.Th("Main Statistics"))),
                     html.Tbody(
                         [html.Tr([
                             html.Td(x),
@@ -55,7 +56,7 @@ section1 = html.Div(
                 ])
             ]),
             dbc.Col([
-                charts.side_chart,
+                html.Div(charts.side_chart),
                 html.Table([
                     html.Thead(html.Tr(html.Th("% Change Statistics"))),
                     html.Tbody(
@@ -65,7 +66,7 @@ section1 = html.Div(
                         ]) for x in charts.side_chart_stats]
                     )
                 ])
-            ]),
+            ], width={"size": 6}),
         ])
     ])
 
@@ -75,7 +76,7 @@ footer = html.Div([
 
 app.layout = html.Div([
     nav,
-    section1,
+    body,
     footer
 ])
 
