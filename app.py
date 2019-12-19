@@ -10,11 +10,7 @@ def index():
 
 @app.route('/main')
 def main():
-    return render_template('main.html', hello=dict(
-        a=1,
-        b=2,
-        c=3
-    ))
+    return render_template('main.html')
 
 
 if __name__ == "__main__":
