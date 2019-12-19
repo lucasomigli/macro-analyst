@@ -107,4 +107,23 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# flask
+venv/
+
+*.pyc
+__pycache__/
+
+instance/
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+dist/
+build/
+*.egg-info/
+
+# visual studio code
+.vscode/
+
 # End of https://www.gitignore.io/api/python
