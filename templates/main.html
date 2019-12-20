@@ -8,7 +8,7 @@
 
 {% block body %}
 
-<div id="Main">
+<div id="Main main-body">
 	<div id="Hero_05">
 		<svg class="Background_bd">
 			<rect fill="rgba(255,255,255,1)" id="Background_bd" rx="0" ry="0" x="0" y="0" width="1920" height="1080">
@@ -269,7 +269,13 @@
 					</path>
 				</svg>
 			</div>
-			<div id="Dropdown_1_cd">
+			<div id="Dropdown_1_cd" class="dropdown">
+
+				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
+					<span class="caret"></span></button>
+
+			</div>
+			<div id="Dropdown_1_cd" class="dropdown">
 				<svg class="Rectangle_686_ce">
 					<rect fill="rgba(255,255,255,1)" stroke="rgba(204,204,204,1)" stroke-width="1px"
 						stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto"
@@ -289,6 +295,15 @@
 						d="M 6.699999809265137 8.100000381469727 L 2 3.400000095367432 L 3.400000095367432 2 L 6.699999809265137 5.300000190734863 L 10 2 L 11.39999961853027 3.400000095367432 L 6.699999809265137 8.100000381469727 Z">
 					</path>
 				</svg>
+				<ul class="dropdown-menu">
+					<li class="dropdown-header">Dropdown header 1</li>
+					<li><a href="#">HTML</a></li>
+					<li><a href="#">CSS</a></li>
+					<li><a href="#">JavaScript</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Dropdown header 2</li>
+					<li><a href="#">About Us</a></li>
+				</ul>
 			</div>
 			<div id="Small_Cards" class="Small_Cards">
 				<svg class="Rectangle_339">

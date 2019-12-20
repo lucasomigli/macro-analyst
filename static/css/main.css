@@ -50,6 +50,13 @@
     overflow: visible;
 }
 
+#main-body {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
 .Background_bd {
     position: absolute;
     overflow: visible;

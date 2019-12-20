@@ -9,6 +9,8 @@ import numpy as np
 
 df = pd.read_csv('data/sp500.csv')
 
+char_types = ("candlestick", "lines")
+
 # Descriptive statistics and indicators
 
 df['%Change'] = df['Settle'].pct_change()
@@ -48,127 +50,150 @@ side_chart_stats = dict(
     sum=df['%Change'].sum()
 )
 
+traces = []
+
+
+def set_traces():
+    temp = []
+    temp.append(main_trace)
+    temp.append(sma_trace)
+    temp.append(bbu_trace)
+    temp.append(bbl_trace)
+
+    return temp
+
+
+main_trace = {
+    "name": "S&P 500 Index",
+    "line": {
+        "color": "rgba(31,119,180,1)",
+        "fillcolor": "rgba(31,119,180,1)"
+    },
+    "type": "lines",
+    "fill": "none",
+    "xsrc": "cbarber3102:2:063aed",
+    "x": df['Date'],
+    "y": df['Settle'],
+    "frame": None,
+    "xaxis": "x",
+    "yaxis": "y2",
+    "low": df['Low'],
+    "lowsrc": "cbarber3102:2:e2cfd6",
+    "high": df['High'],
+    "highsrc": "cbarber3102:2:9a3f4a",
+    "open": df['Open'],
+    "opensrc": "cbarber3102:2:911643",
+    "close": df['Last'],
+    "closesrc": "cbarber3102:2:248515",
+}
+
+sma_trace = {
+    "line": {
+        "color": "#E377C2",
+        "width": 0.5,
+        "fillcolor": "rgba(214,39,40,1)"
+    },
+    "mode": "lines",
+    "name": "Moving Average",
+    "type": "scatter",
+    "xsrc": "cbarber3102:2:c433fa",
+    "x": df['Date'],
+    "ysrc": "cbarber3102:2:bb9887",
+    "y": df['sma'],
+    "xaxis": "x",
+    "yaxis": "y2",
+    "frame": None,
+    "hoverinfo": "none",
+}
+
+bbu_trace = {
+    "line": {
+        "color": "#ccc",
+        "width": 0.5,
+        "fillcolor": "rgba(255,127,14,1)"
+    },
+    "mode": "lines",
+    "name": "Bollinger Bands",
+    "type": "scatter",
+    "x": df['Date'],
+    "xsrc": "cbarber3102:2:f43241",
+    "y": df['bollinger_bands_upper'],
+    "ysrc": "cbarber3102:2:ea92fd",
+    "frame": None,
+    "xaxis": "x",
+    "yaxis": "y2",
+    "legendgroup": "Bollinger Bands",
+    "hoverinfosrc": "cbarber3102:2:edb3e3",
+    "hoverinfo": "none",
+    "legendgroup": "Bollinger Bands"
+}
+
+bbl_trace = {
+    "line": {
+        "color": "#ccc",
+        "width": 0.5,
+        "fillcolor": "rgba(44,160,44,1)"
+    },
+    "mode": "lines",
+    "name": "Bollinger Bands",
+    "type": "scatter",
+    "x": df['Date'],
+    "xsrc": "cbarber3102:2:a46bf2",
+    "y": df['bollinger_bands_lower'],
+    "ysrc": "cbarber3102:2:9b1710",
+    "frame": None,
+    "xaxis": "x",
+    "yaxis": "y2",
+    "hoverinfo": "none",
+    "showlegend": False,
+    "legendgroup": "Bollinger Bands"
+}
+
+
+main_layout = {
+    "title": "Main Chart",
+    "xaxis": {
+        "title": "Date",
+        "domain": [0, 1],
+        "rangeslider": {"visible": False},
+        "autorange": True
+    },
+    "yaxis": {
+        "domain": [0, 1],
+        "showticklabels": False,
+        "autorange": True
+    },
+    "legend": {
+        "x": 0.3,
+        "y": 0.9,
+        "yanchor": "bottom",
+        "orientation": "h"
+    },
+    "margin": {
+        "b": 40,
+        "l": 60,
+        "r": 10,
+        "t": 25
+    },
+    "hovermode": "closest",
+    "showlegend": True,
+}
+
+traces = set_traces()
+
 main_chart = dcc.Graph(
     id='main_chart',
     figure=dict(
-        layout={
-            "title": "Main Chart",
-            "xaxis": {"rangeselector": {
-                "x": 0,
-                "y": 0.9,
-                "font": {"size": 13},
-                "visible": True,
-                "bgcolor": "rgba(150, 200, 250, 0.4)",
-                "buttons": [
-                    {
-                        "step": "all",
-                        "count": 1,
-                        "label": "reset"
-                    },
-                    {
-                        "step": "year",
-                        "count": 1,
-                        "label": "1yr",
-                        "stepmode": "backward"
-                    },
-                    {
-                        "step": "month",
-                        "count": 3,
-                        "label": "3 mo",
-                        "stepmode": "backward"
-                    },
-                    {
-                        "step": "month",
-                        "count": 1,
-                        "label": "1 mo",
-                        "stepmode": "backward"
-                    },
-                    {"step": "all"}
-                ]
-            }},
-            "yaxis": {
-                "domain": [0, df['Last'].max()],
-                "showticklabels": False
-            },
-            "legend": {
-                "x": 0.3,
-                "y": 0.9,
-                "yanchor": "bottom",
-                "orientation": "h"
-            },
-            "margin": {
-                "b": 40,
-                "l": 40,
-                "r": 40,
-                "t": 40
-            },
-            "yaxis2": {"domain": [0.2, 0.8]},
-            "plot_bgcolor": "rgb(250, 250, 250)"
-        },
-        data=[{
-            "name": "S&P 500 Index",
-            "type": "line",
-            'x': df['Date'],
-            'y': df['Settle'],
-            "yaxis": "y2",
-            "low": df['Low'],
-            "high": df['High'],
-            "open": df['Open'],
-            "last": df['Last'],
-            "line": {"color": "green"},
-            "decreasing": {"line": {"color": "red"}},
-            "increasing": {"line": {"color": "green"}}
-        }, {
-            "line": {"width": 1},
-            "mode": "lines",
-            "name": "Moving Average",
-            "type": "scatter",
-            "x": df['Date'],
-            "y": df['sma'],
-            "yaxis": "y2",
-            "marker": {"color": "#E377C2"}
-        }, {
-            "name": "Volume",
-            "type": "bar",
-            "x": df['Date'],
-            "y": df['Volume'],
-            "yaxis": "y",
-            "marker": {"color": "purple"}
-        }, {
-            "line": {"width": 1},
-            "name": "Bollinger Bands",
-            "type": "scatter",
-            "x": df['Date'],
-            "y": df['bollinger_bands_upper'],
-            "yaxis": "y2",
-            "marker": {"color": "lightblue"},
-            "hoverinfo": "none",
-            "legendgroup": "Bollinger Bands"
-        }, {
-            "line": {"width": 1},
-            "type": "scatter",
-            "x": df['Date'],
-            "y": df['bollinger_bands_lower'],
-            "yaxis": "y2",
-            "marker": {"color": "lightblue"},
-            "hoverinfo": "none",
-            "showlegend": False,
-            "legendgroup": "Bollinger Bands"
-        }
-        ]
-    )
+        layout=main_layout,
+        data=[main_trace, sma_trace, bbu_trace, bbl_trace],
+    ),
+    config={'displayModeBar': False, "autosizable": True}
 )
 
 side_chart = dcc.Graph(
     id='side_chart',
     figure=dict(
-        layout={
-            "title": "% Change",
-            "x": 0,
-            "y": 0.9,
-            "font": {"size": 13},
-            "visible": True,
-        },
+        layout=main_layout,
         data=[
             {
                 "name": "% Change",
@@ -187,7 +212,7 @@ side_chart = dcc.Graph(
                 "yaxis": "y2",
                 "line": {"color": "lightpurple"}
             }
-
         ]
-    )
+    ),
+    config={'displayModeBar': False, "autosizable": True}
 )
