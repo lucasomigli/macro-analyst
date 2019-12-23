@@ -1,18 +1,10 @@
-import dash
-import charts
 import dash_core_components as dcc
-import dash_html_components as html
-import dash_bootstrap_components as dbc
-
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('data/sp500.csv')
-
-char_types = ("candlestick", "lines")
+df = pd.read_csv('macroanalyst/data/sp500.csv')
 
 # Descriptive statistics and indicators
-
 df['%Change'] = df['Settle'].pct_change()
 df['sma'] = df['Settle'].rolling(10).mean()
 df['bollinger_bands_upper'] = df['Settle'].rolling(
@@ -149,9 +141,7 @@ bbl_trace = {
     "legendgroup": "Bollinger Bands"
 }
 
-
 main_layout = {
-    "title": "Main Chart",
     "xaxis": {
         "title": "Date",
         "domain": [0, 1],

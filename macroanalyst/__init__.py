@@ -1,13 +1,39 @@
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from macroanalyst.manage import db
+from macroanalyst import charts
+import os
+
 import dash
-import charts
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 
-import codecs
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.CERULEAN])
+# =============================
+# Flask app
+# =============================
+
+app = Flask(__name__)
+
+# Config
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
+    os.path.join(os.path.abspath(os.path.dirname(__file__)), 'db.sqlite')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# Init Database with SQLAlchemy
+db.init_app(app)
+
+# Init Migration
+migrate = Migrate(app, db)
+
+from macroanalyst import routes
+
+# =============================
+# Dash app
+# =============================
 
 select = dbc.Row([
     dbc.Col(
@@ -38,7 +64,6 @@ select = dbc.Row([
         ), width={"size": 12, "offset": 2})
 ])
 
-
 body = html.Div(
     dbc.Row([
             dbc.Col(
@@ -56,13 +81,19 @@ body = html.Div(
     style={'marginBottom': 50, 'marginTop': 25}
 )
 
-app.layout = html.Div([
+dash_app = dash.Dash(
+    __name__,
+    server=app,
+    routes_pathname_prefix='/dash/'
+)
+
+dash_app.layout = html.Div([
     select,
     body
 ])
 
 
-@app.callback(
+@dash_app.callback(
     Output('main_chart', 'figure'),
     [Input('dropdown-charts', 'value'),
      ])
@@ -87,7 +118,3 @@ def update_figure(chart_type):
         'data': charts.traces,
         'layout': charts.main_layout
     }
-
-
-if __name__ == '__main__':
-    app.run_server(debug=True, port=8000)

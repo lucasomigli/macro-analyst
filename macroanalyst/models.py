@@ -1,25 +1,9 @@
-from flask import Flask, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
-from flask_marshmallow import Marshmallow
-from flask_migrate import Migrate
-import os
-
-from app import app
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
-    os.path.join(os.path.abspath(os.path.dirname(__file__)), 'db.sqlite')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-
-# Init database application with sqlalchemy
-db = SQLAlchemy(app)
-# Init marshmallow schema
-ma = Marshmallow(app)
-# Init Migration
-migrate = Migrate(app, db)
-
+from marshmallow import Schema, fields
+from macroanalyst.manage import db
 
 # Country Model
+
+
 class Country(db.Model):
     id = db.Column(db.Integer, primary_key=True,)
     country = db.Column(db.String(100), unique=True, nullable=False)
@@ -33,13 +17,12 @@ class Country(db.Model):
 
 
 # Country Schema
-class CountrySchema(ma.Schema):
-    class Meta:
-        fields = ('id', 'country')
+class CountrySchema(Schema):
+    country = fields.Str()
+    indicators = fields.Str()
 
 
 country_schema = CountrySchema()
-countries_schema = CountrySchema()
 
 
 # Indicators Model
@@ -62,10 +45,12 @@ class Indicator (db.Model):
 
 
 # Indicators Schema
-class IndicatorSchema(ma.Schema):
-    class Meta:
-        fields = ('id', 'indicator', 'code', 'source', 'country_id')
+class IndicatorSchema(Schema):
+    id = fields.Integer(),
+    indicator = fields.String(),
+    code = fields.String(),
+    source = fields.String(),
+    country_id = fields.Integer()
 
 
 indicator_schema = IndicatorSchema()
-indicators_schema = IndicatorSchema()
