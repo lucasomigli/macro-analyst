@@ -44,6 +44,13 @@ Libraries we will be using:
 - Pandas for reading csv/xlsx, creating graphs and performing descriptive statistics
 - Matplotplib for charting data and adding momentum indicatots (Bollinger bands, MACD, Stochastic RSI, RSI, Moving Average, Volume etc..)
 
+Charting with Dash.
+To add:
+- Fix Momentum Indicators being 'reversed'. SMAs go up until last x days, whereas should be the opposite.
+- Add functionality for hoovering on either charts to have visual response from other one. 
+- All charts responding to time-frame resizing.  
+- Add Histogram for graphing historical changes with normal distribution. 
+
 ## Developers
 People currently involved in the project:
 - Keagan https://github.com/KeaganM
