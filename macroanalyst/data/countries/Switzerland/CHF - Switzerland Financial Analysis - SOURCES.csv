@@ -1,0 +1,24 @@
+Driver Analysis,Driver,Code,Source
+Leading Indicators Surveys,PMI Manufacturing Index,PMI Manufacturing Index (Markit),https://www.investing.com/economic-calendar/svme-pmi-278
+,Consumer Sentiment Index,Consumer Confidence Indicator (ECBCS),https://www.quandl.com/api/v3/datasets/SNB/CONCON.xml?api_key=VisDzHjR9F8hyHG35baj
+,Building Permits,Building Permits,https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=off&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=PRCNTO01CHQ661N&scale=left&cosd=1999-01-01&coed=2019-01-01&line_color=%234572a7&link_values=false&line_style=solid&mark_type=none&mw=3&lw=2&ost=-99999&oet=99999&mma=0&fml=a&fq=Quarterly&fam=avg&fgst=lin&fgsnd=2009-06-01&line_index=1&transformation=lin&vintage_date=2019-12-28&revision_date=2019-12-28&nd=1999-01-01
+Money Supply,Broad Money M2,M2 Broad Money (current LCU),https://www.quandl.com/api/v3/datasets/SNB/SNBMONAGG.xml?api_key=VisDzHjR9F8hyHG35baj
+Interest Rates,Interest Rates %,Bank interest rate Decision - QUANDL,https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=off&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=IRSTCI01CHM156N&scale=left&cosd=1972-01-01&coed=2019-06-01&line_color=%234572a7&link_values=false&line_style=solid&mark_type=none&mw=3&lw=2&ost=-99999&oet=99999&mma=0&fml=a&fq=Monthly&fam=avg&fgst=lin&fgsnd=2009-06-01&line_index=1&transformation=lin&vintage_date=2019-12-28&revision_date=2019-12-28&nd=1972-01-01
+Inflation,Consumer and Business Inflation,CPI (Inflation Rates),https://www.quandl.com/api/v3/datasets/SNB/PLKOPR.xml?api_key=VisDzHjR9F8hyHG35baj
+,Consumer and Business Inflation,PPI (Services),https://www.quandl.com/api/v3/datasets/SNB/PLPROIMPR.xml?api_key=VisDzHjR9F8hyHG35baj
+Employment,Employment,Total Labor Force (OECD),https://www.quandl.com/api/v3/datasets/WWDI/CHE_SL_TLF_TOTL_IN.xml?api_key=VisDzHjR9F8hyHG35baj
+Balance Sheets and Sovereign Risk,Central Government Debt to GDP Ratio % (IMF),Government Debt to GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/CHE_GGXWDG_NGDP.xml?api_key=VisDzHjR9F8hyHG35baj
+,Central Government Revenue,Central Government Revenue as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/CHE_GGR_NGDP.xml?api_key=VisDzHjR9F8hyHG35baj
+,Central Government Revenue,Central Government Revenue in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/CHE_GGR.xml?api_key=VisDzHjR9F8hyHG35baj
+,Central Government Expenditures,Central Government Expenditures as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/CHE_GGX_NGDP.xml?api_key=VisDzHjR9F8hyHG35baj
+,Central Government Expenditures,Central Government Expenditures in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/CHE_GGX.xml?api_key=VisDzHjR9F8hyHG35baj
+,Interest / GDP,Interest Payments As % of Revenue (World Bank),https://www.quandl.com/api/v3/datasets/WWDI/CHE_GC_XPN_INTP_RV_ZS.xml?api_key=VisDzHjR9F8hyHG35baj
+,Government Bonds Benchmarks,Government 10Y Bond Monthly (Bank Of England QUANDL),https://www.quandl.com/api/v3/datasets/SNB/RENDOBLIM.xml?api_key=VisDzHjR9F8hyHG35baj
+,Central Bank Balance Sheet (BOC),Bank of Switzerland Central Bank Balance Sheet,https://www.quandl.com/api/v3/datasets/SNB/SNBBIPO.xml?api_key=VisDzHjR9F8hyHG35baj
+,COT Report,Cot Report - CNY FX,https://www.quandl.com/api/v3/datasets/CFTC/092741_F_ALL.xml?api_key=VisDzHjR9F8hyHG35baj
+,Balance of Payments (Deutsche Bundesbank),Balance Of Payments ,https://www.quandl.com/api/v3/datasets/SNB/BOPOVERQ.xml?api_key=VisDzHjR9F8hyHG35baj
+Stock Market Data,Stock Market Index,"Stock Market (Quandl, Wiki Continuous Futures)",https://www.quandl.com/api/v3/datasets/CHRIS/EUREX_FSMI1.xml?api_key=VisDzHjR9F8hyHG35baj
+GDP Growth,Real GDP,GDP Growth Annualised in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/CHE_NGDPD.xml?api_key=VisDzHjR9F8hyHG35baj
+,Real GDP,GDP Growth (Quarterly) (Current LCU) FRED ,https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=off&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=CLVMNACSAB1GQCH&scale=left&cosd=1980-01-01&coed=2019-01-01&line_color=%234572a7&link_values=false&line_style=solid&mark_type=none&mw=3&lw=2&ost=-99999&oet=99999&mma=0&fml=a&fq=Quarterly&fam=avg&fgst=lin&fgsnd=2009-06-01&line_index=1&transformation=lin&vintage_date=2019-12-28&revision_date=2019-12-28&nd=1980-01-01
+,Real GDP,GDP Growth Annualised (Constant LCU) IMF,"https://www.quandl.com/api/v3/datasets/ODA/CHE_NGDPD.xml?api_key=VisDzHjR9F8hyHG35baj
+"

@@ -1,0 +1,24 @@
+Driver Analysis,,Driver,Code,Source
+Leading Indicators Surveys,,PMI Manufacturing Index,PMI Manufacturing Index (Markit),https://www.investing.com/economic-calendar/norwegian-pmi-manufacturing-642
+,,Consumer Sentiment Index,Consumer Confidence Indicator (IMF),https://www.quandl.com/api/v3/datasets/OECD/KEI_CSCICP02_SWE_ST_M.xml?api_key=VisDzHjR9F8hyHG35baj
+,,Building Permits,Building Permits,http://sdw.ecb.europa.eu/quickviewexport.do;jsessionid=4A7734BD9CA18A2B52E0EA8F5B12CCAD?SERIES_KEY=132.STS.M.SE.S.BPER.CC1109.4.000&type=xls
+Money Supply,,Broad Money M2,M2 Broad Money (current LCU),http://data.ssb.no/api/v0/dataset/172769.csv?lang=en
+Interest Rates,,Interest Rates %,Bank interest rate Decision - QUANDL,https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=off&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=IRSTCI01NOM156N&scale=left&cosd=1982-01-01&coed=2019-06-01&line_color=%234572a7&link_values=false&line_style=solid&mark_type=none&mw=3&lw=2&ost=-99999&oet=99999&mma=0&fml=a&fq=Monthly&fam=avg&fgst=lin&fgsnd=2009-06-01&line_index=1&transformation=lin&vintage_date=2019-12&revision_date=2019-12&nd=1982-01-01
+Inflation,,Consumer and Business Inflation,CPI (Inflation Rates),http://data.ssb.no/api/v0/dataset/1086.csv?lang=en
+,,Consumer and Business Inflation,PPI Producers Price Index,https://data.ssb.no/api/v0/en/table/12462
+Employment,,Employment,Total Labor Force (OECD),https://www.quandl.com/api/v3/datasets/AMECO/NOR_1_0_0_0_NLTN.xml?api_key=VisDzHjR9F8hyHG35baj
+Balance Sheets and Sovereign Risk,,Central Government Debt to GDP Ratio % (IMF),,https://www.quandl.com/api/v3/datasets/ODA/NOR_GGXWDG_NGDP.xml?api_key=VisDzHjR9F8hyHG35baj
+,,Central Government Revenue,Central Government Revenue as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/NOR_GGR_NGDP.xml?api_key=VisDzHjR9F8hyHG35baj
+,,Central Government Revenue,Central Government Revenue in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/NOR_GGR.xml?api_key=VisDzHjR9F8hyHG35baj
+,,Central Government Expenditures,Central Government Expenditures as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/NOR_GGX_NGDP.xml?api_key=VisDzHjR9F8hyHG35baj
+,,Central Government Expenditures,Central Government Expenditures in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/NOR_GGX.xml?api_key=VisDzHjR9F8hyHG35baj
+,,Interest / GDP,Interest Payments As % of Revenue (World Bank),https://www.quandl.com/api/v3/datasets/WWDI/NOR_GC_XPN_INTP_RV_ZS.xml?api_key=VisDzHjR9F8hyHG35baj
+,,Government Bonds Benchmarks,Government 10Y Bond Monthly (FRED),https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=off&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=IRLTLT01NOM156N&scale=left&cosd=1985-01-01&coed=2019-06-01&line_color=%234572a7&link_values=false&line_style=solid&mark_type=none&mw=3&lw=2&ost=-99999&oet=99999&mma=0&fml=a&fq=Monthly&fam=avg&fgst=lin&fgsnd=2009-06-01&line_index=1&transformation=lin&vintage_date=2019-12&revision_date=2019-12&nd=1985-01-01
+,,Central Bank Balance Sheet (BOC),Central Bank Balance Sheet,https://data.ssb.no/api/v0/en/table/08428/
+,,COT Report,Cot Report,144GCj8WXvzM0H7xSmyWhE5KbtLPpj0wY5vJdEzyTK2o
+,,Balance of Payments (IMF),Balance Of Payments,https://data.ssb.no/api/v0/en/table/09672
+Stock Market Data,,Stock Market Index,Stock Market,https://www.investing.com/indices/ose-benchamrk-historical-data
+GDP Growth,,Real GDP,GDP Growth Annualised in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/NOR_NGDPD.xml?api_key=VisDzHjR9F8hyHG35baj
+,,Real GDP,GDP Growth (Quarterly) (Current LCU) FRED ,https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=off&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=CLVMNACSCAB1GQNO&scale=left&cosd=1978-01-01&coed=2019-01-01&line_color=%234572a7&link_values=false&line_style=solid&mark_type=none&mw=3&lw=2&ost=-99999&oet=99999&mma=0&fml=a&fq=Quarterly&fam=avg&fgst=lin&fgsnd=2009-06-01&line_index=1&transformation=lin&vintage_date=2019-12&revision_date=2019-12&nd=1978-01-01
+,,Real GDP,GDP Growth Annualised (Constant LCU) IMF,"https://www.quandl.com/api/v3/datasets/ODA/NOR_NGDP_R.xml?api_key=VisDzHjR9F8hyHG35baj
+"
