@@ -2,10 +2,12 @@ import dash_core_components as dcc
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('macroanalyst/data/sp500.csv')
+df = pd.read_csv(
+    'https://www.quandl.com/api/v3/datasets/RBA/G01.csv?api_key=VisDzHjR9F8hyHG35baj')
 
 main_chart_stats = dict()
 side_chart_stats = dict()
+
 
 def initialise_charts():
     # Initialises dataframe with the one given.
@@ -54,11 +56,11 @@ def set_stats(indicator_name, column):
             sum=df['%Change'].sum()
         )
 
-    date = df.ix[:,0]
+    date = df.iloc[:, 0]
 
     main_trace['name'] = indicator_name
     main_trace['x'] = date
-    main_trace['y'] = df.ix[:,1]
+    main_trace['y'] = df.iloc[:, 1]
     sma_trace['x'] = date
     sma_trace['y'] = df['sma']
     bbu_trace['x'] = date
@@ -86,6 +88,7 @@ def set_traces():
     traces.append(bbu_trace)
     traces.append(bbl_trace)
     return traces
+
 
 def set_side_traces():
     side_traces = []
@@ -184,7 +187,7 @@ main_layout = {
         "autorange": True
     },
     "yanchor": "bottom",
-        "legend": {
+    "legend": {
         "x": 0.5,
         "y": 1.0,
         "orientation": "h"

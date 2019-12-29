@@ -8,17 +8,17 @@ Interest Rates,,Interest Rates %,Bank interest rate Decision - QUANDL,https://ap
 Inflation,,Consumer and Business Inflation,CPI (SSB),https://api.db.nomics.world/v22/series/ROSSTAT/CPI/I_M?observations=1&format=csv
 ,,Consumer and Business Inflation,PPI Producers Price Index (SSB),https://api.db.nomics.world/v22/series/ROSSTAT/PPI/I_M?observations=1&format=csv
 Employment,,Employment,Total Labor Force (OECD),https://api.db.nomics.world/v22/series/OECD/ALFS_SUMTAB/RUS.YGTT07L1_ST.A?observations=1&format=csv
-Balance Sheets and Sovereign Risk,,Central Government Debt to GDP,Central Government Debt to GDP Ratio % (IMF),https://www.quandl.com/api/v3/datasets/ODA/RUS_GGXWDG_NGDP.xml?api_key=VisDzHjR9F8hyHG35baj
-,,Central Government Revenue,Central Government Revenue as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/RUS_GGR_NGDP.xml?api_key=VisDzHjR9F8hyHG35baj
-,,Central Government Revenue,Central Government Revenue in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/RUS_GGR.csv?api_key=VisDzHjR9F8hyHG35baj
-,,Central Government Expenditures,Central Government Expenditures as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/RUS_GGX_NGDP.xml?api_key=VisDzHjR9F8hyHG35baj
-,,Central Government Expenditures,Central Government Expenditures in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/RUS_GGX.csv?api_key=VisDzHjR9F8hyHG35baj
-,,Interest / GDP,Interest Payments As % of Revenue (World Bank),https://www.quandl.com/api/v3/datasets/WWDI/RUS_GC_XPN_INTP_RV_ZS.xml?api_key=VisDzHjR9F8hyHG35baj
+Balance Sheets and Sovereign Risk,,Central Government Debt to GDP,Central Government Debt to GDP Ratio % (IMF),https://www.quandl.com/api/v3/datasets/ODA/RUS_GGXWDG_NGDP.xml?api_key=API_KEY
+,,Central Government Revenue,Central Government Revenue as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/RUS_GGR_NGDP.xml?api_key=API_KEY
+,,Central Government Revenue,Central Government Revenue in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/RUS_GGR.csv?api_key=API_KEY
+,,Central Government Expenditures,Central Government Expenditures as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/RUS_GGX_NGDP.xml?api_key=API_KEY
+,,Central Government Expenditures,Central Government Expenditures in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/RUS_GGX.csv?api_key=API_KEY
+,,Interest / GDP,Interest Payments As % of Revenue (World Bank),https://www.quandl.com/api/v3/datasets/WWDI/RUS_GC_XPN_INTP_RV_ZS.xml?api_key=API_KEY
 ,,Government Bonds Benchmarks,Government 10Y Bond Monthly (FRED),https://api.db.nomics.world/v22/series/OECD/MEI/RUS.IRLTLT01.ST.M?observations=1&format=csv
 ,,Central Bank Balance Sheet (BOC),Central Bank Balance Sheet,http://www.cbr.ru/vfs/eng/statistics/fafbs/dyn_fa_e.xlsx
-,,COT Report,Cot Report,https://www.quandl.com/api/v3/datasets/CFTC/089741_F_ALL.xml?api_key=VisDzHjR9F8hyHG35baj
+,,COT Report,Cot Report,https://www.quandl.com/api/v3/datasets/CFTC/089741_F_ALL.xml?api_key=API_KEY
 ,,Balance of Payments (IMF),Balance Of Payments ,https://api.db.nomics.world/v22/series/IMF/BOP?limit=1000&offset=0&q=bop&observations=1&format=csv&align_periods=1&dimensions=%7B%22FREQ%22%3A%5B%22Q%22%5D%2C%22INDICATOR%22%3A%5B%22BXGS_BP6_USD%22%2C%22BMG_BP6_USD%22%2C%22BXIP_BP6_USD%22%2C%22BMIP_BP6_USD%22%2C%22BXIS_BP6_USD%22%2C%22BMIS_BP6_USD%22%2C%22BFDA_BP6_USD%22%2C%22BFDL_BP6_USD%22%2C%22BOP_BP6_USD%22%5D%2C%22REF_AREA%22%3A%5B%22RU%22%5D%7D
 Stock Market Data,,Stock Market Index,"Stock Market (Quandl, Wiki Continuous Futures)",https://iss.moex.com/iss/engines/stock/markets/index/securities/RTSI/candles.xml?iss.only=history&interval=31&iss.reverse=true&from=1995-09-01&till=2019-12-28&iss.json=extended&callback=JSON_CALLBACK&lang=en&limit=100&start=0&sort_order=TRADEDATE&sort_order_desc=desc&_=1563185736134'
-GDP Growth,,Real GDP,GDP Growth Annualised in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/RUS_NGDPD.csv?api_key=VisDzHjR9F8hyHG35baj
+GDP Growth,,Real GDP,GDP Growth Annualised in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/RUS_NGDPD.csv?api_key=API_KEY
 ,,Real GDP,GDP Growth (Quarterly) (Current LCU) FRED,https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=off&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=RUSGDPNQDSMEI&scale=left&cosd=2003-01-01&coed=2018-10-01&line_color=%234572a7&link_values=false&line_style=solid&mark_type=none&mw=3&lw=2&ost=-99999&oet=99999&mma=0&fml=a&fq=Quarterly&fam=avg&fgst=lin&fgsnd=2009-06-01&line_index=1&transformation=lin&vintage_date=2019-12-28&revision_date=2019-12-28&nd=2003-01-01
-,,Real GDP,GDP Growth Annualised (Constant LCU) IMF,https://www.quandl.com/api/v3/datasets/ODA/RUS_NGDP_R.csv?api_key=VisDzHjR9F8hyHG35baj
+,,Real GDP,GDP Growth Annualised (Constant LCU) IMF,https://www.quandl.com/api/v3/datasets/ODA/RUS_NGDP_R.csv?api_key=API_KEY

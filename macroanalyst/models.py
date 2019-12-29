@@ -2,6 +2,8 @@ from marshmallow import Schema, fields
 from macroanalyst.manage import db
 
 # Country Model
+
+
 class Country(db.Model):
     id = db.Column(db.Integer, primary_key=True,)
     country = db.Column(db.String(100), unique=True, nullable=False)

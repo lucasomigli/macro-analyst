@@ -2,38 +2,38 @@ Endogenous Driver Analysis,,,,
 Driver Analysis,,Driver,Code,Source
 Leading Indicators Surveys,,PMI Manifacturing Index,AIG Manifacturing Index,https://www.investing.com/economic-calendar/aig-manufacturing-index-203
 ,,NMI Non Manifacturing,AIG Services Index,https://www.investing.com/economic-calendar/aig-services-index-347
-,,Consumer Sentiment Index,Consumer Confidence Indicator (OECD),https://www.quandl.com/api/v3/datasets/OECD/KEI_CSCICP02_AUS_ST_M.csv?api_key=API_KEY_TO_ADD
-,,Building Permits,Private Dwelling Approvals,https://www.quandl.com/api/v3/datasets/RBA/H03_GISPSDA.xml?api_key=API_KEY_TO_ADD
+,,Consumer Sentiment Index,Consumer Confidence Indicator (OECD),https://www.quandl.com/api/v3/datasets/OECD/KEI_CSCICP02_AUS_ST_M.csv?api_key=API_KEY
+,,Building Permits,Private Dwelling Approvals,https://www.quandl.com/api/v3/datasets/RBA/H03_GISPSDA.xml?api_key=API_KEY
 Money Supply,,Broad Money M2,M2 Broad Money (current LCU),https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=off&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=BRDMNYAUM189N&scale=left&cosd=2001-12-01&coed=2019-03-01&line_color=%234572a7&link_values=false&line_style=solid&mark_type=none&mw=3&lw=2&ost=-99999&oet=99999&mma=0&fml=a&fq=Monthly&fam=avg&fgst=lin&fgsnd=2009-06-01&line_index=1&transformation=lin&vintage_date=2019-12-19&revision_date=2019-12-19&nd=2001-12-01
-,,Broad Money M2,M2 Broad Money % Change,https://www.quandl.com/api/v3/datasets/WWDI/AUS_FM_LBL_BMNY_ZG.xml?api_key=API_KEY_TO_ADD
+,,Broad Money M2,M2 Broad Money % Change,https://www.quandl.com/api/v3/datasets/WWDI/AUS_FM_LBL_BMNY_ZG.xml?api_key=API_KEY
 Interest Rates,,Interest Rates %,Lending Rates,https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=off&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=IRSTCI01AUM156N&scale=left&cosd=1990-08-01&coed=2019-07-01&line_color=%234572a7&link_values=false&line_style=solid&mark_type=none&mw=3&lw=2&ost=-99999&oet=99999&mma=0&fml=a&fq=Monthly&fam=avg&fgst=lin&fgsnd=2009-06-01&line_index=1&transformation=lin&vintage_date=2019-12-19&revision_date=2019-12-19&nd=1990-08-01
-,,Interest Rates %,Real Lending Rates,https://www.quandl.com/api/v3/datasets/WWDI/AUS_FR_INR_RINR.xml?api_key=API_KEY_TO_ADD
-Inflation,,Consumer and Business Inflation,CPI,https://www.quandl.com/api/v3/datasets/RBA/G01.csv?api_key=API_KEY_TO_ADD
-,,Consumer and Business Inflation,WPI Wholesale Price Index,https://www.quandl.com/api/v3/datasets/WWDI/AUS_FP_WPI_TOTL.xml?api_key=API_KEY_TO_ADD
+,,Interest Rates %,Real Lending Rates,https://www.quandl.com/api/v3/datasets/WWDI/AUS_FR_INR_RINR.xml?api_key=API_KEY
+Inflation,,Consumer and Business Inflation,CPI,https://www.quandl.com/api/v3/datasets/RBA/G01.csv?api_key=API_KEY
+,,Consumer and Business Inflation,WPI Wholesale Price Index,https://www.quandl.com/api/v3/datasets/WWDI/AUS_FP_WPI_TOTL.xml?api_key=API_KEY
 ,,Consumer and Business Inflation,PPI Producer Price Index,https://www.abs.gov.au/ausstats/meisubs.nsf/log?openagent&642701.xls&6427.0&Time%20Series%20Spreadsheet&4EBE00CB1AD1E84BCA2583E700766026&0&Mar%202019&26.04.2019&Latest
-Employment,,Employment,Employment to Population Ratio %,https://www.quandl.com/api/v3/datasets/WWDI/AUS_SL_EMP_TOTL_SP_ZS.xml?api_key=API_KEY_TO_ADD
-,,Employment,Total Population,https://www.quandl.com/api/v3/datasets/WWDI/AUS_SP_POP_TOTL.xml?api_key=API_KEY_TO_ADD
-,,Employment,Total Labor Force (Y),https://www.quandl.com/api/v3/datasets/WWDI/AUS_SL_TLF_TOTL_IN.xml?api_key=API_KEY_TO_ADD
+Employment,,Employment,Employment to Population Ratio %,https://www.quandl.com/api/v3/datasets/WWDI/AUS_SL_EMP_TOTL_SP_ZS.xml?api_key=API_KEY
+,,Employment,Total Population,https://www.quandl.com/api/v3/datasets/WWDI/AUS_SP_POP_TOTL.xml?api_key=API_KEY
+,,Employment,Total Labor Force (Y),https://www.quandl.com/api/v3/datasets/WWDI/AUS_SL_TLF_TOTL_IN.xml?api_key=API_KEY
 ,,Employment,Total Labor Force (M),https://www.abs.gov.au/ausstats/meisubs.nsf/log?openagent&6202001.xls&6202.0&Time%20Series%20Spreadsheet&E4E4149832993439CA2583FB00164228&0&Apr%202019&16.05.2019&Latest
-Balance Sheets and Sovereign Risk,,Government Debt to GDP (IMF),Govt,https://www.quandl.com/api/v3/datasets/ODA/AUS_GGXWDG_NGDP.xml?api_key=API_KEY_TO_ADD
-,,Government S/D % GDP,Govt,https://www.quandl.com/api/v3/datasets/FRED/FYFR.xml?api_key=API_KEY_TO_ADD
-,,Interest / GDP,Govt,https://www.quandl.com/api/v3/datasets/FRED/FYONET.xml?api_key=API_KEY_TO_ADD
-,,Liquidity,Govt,https://www.quandl.com/api/v3/datasets/FRED/FYOINT.xml?api_key=API_KEY_TO_ADD
-,,US 10 Treasury Benchmark,Govt,https://www.quandl.com/api/v3/datasets/FRED/GS10.xml?api_key=API_KEY_TO_ADD
-,,CB Balance Sheet as % of GDP,CBBS,https://www.quandl.com/api/v3/datasets/FRED/WALCL.xml?api_key=API_KEY_TO_ADD
-,,Central Government Debt to GDP Ratio % (IMF),,https://www.quandl.com/api/v3/datasets/ODA/AUS_GGXWDG_NGDP.xml?api_key=API_KEY_TO_ADD
-,,Central Government Revenue,Central Government Revenue as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/AUS_GGR_NGDP.xml?api_key=API_KEY_TO_ADD
-,,Central Government Revenue,Central Government Revenue in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/AUS_GGR.xml?api_key=API_KEY_TO_ADD
-,,Central Government Expenditures,Central Government Expenditures as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/AUS_GGX_NGDP.xml?api_key=API_KEY_TO_ADD
-,,Central Government Expenditures,Central Government Expenditures in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/AUS_GGX.xml?api_key=API_KEY_TO_ADD
-,,Interest / GDP,Interest Payments in Current LCU (World Bank),https://www.quandl.com/api/v3/datasets/WWDI/AUS_GC_XPN_INTP_CN.xml?api_key=API_KEY_TO_ADD
-,,Government Bonds Benchmarks,Australian Government 10Y Bond Monthly (Reserve Bank Australia RBA),https://www.quandl.com/api/v3/datasets/RBA/F02_1_FCMYGBAG10.xml?api_key=API_KEY_TO_ADD
-,,Central Bank B Balance Sheet,Central Bank Assets and Liabilities (Reserve Bank Australia RBA),https://www.quandl.com/api/v3/datasets/RBA/A01.xml?api_key=API_KEY_TO_ADD
-,,Central Bank B Balance Sheet,Central Bank Balance Sheet (Reserve Bank Australia RBA),https://www.quandl.com/api/v3/datasets/RBA/B02.xml?api_key=API_KEY_TO_ADD
-,,Central Bank B Balance Sheet,Central Bank Balance Sheet - Total (Reserve Bank Australia RBA),https://www.quandl.com/api/v3/datasets/RBA/B02_BBCGOTOS.xml?api_key=API_KEY_TO_ADD
-,,COT Report,Cot Report - Australian Dollar,https://www.quandl.com/api/v3/datasets/CFTC/232741_F_ALL_OI.xml?api_key=API_KEY_TO_ADD
+Balance Sheets and Sovereign Risk,,Government Debt to GDP (IMF),Govt,https://www.quandl.com/api/v3/datasets/ODA/AUS_GGXWDG_NGDP.xml?api_key=API_KEY
+,,Government S/D % GDP,Govt,https://www.quandl.com/api/v3/datasets/FRED/FYFR.xml?api_key=API_KEY
+,,Interest / GDP,Govt,https://www.quandl.com/api/v3/datasets/FRED/FYONET.xml?api_key=API_KEY
+,,Liquidity,Govt,https://www.quandl.com/api/v3/datasets/FRED/FYOINT.xml?api_key=API_KEY
+,,US 10 Treasury Benchmark,Govt,https://www.quandl.com/api/v3/datasets/FRED/GS10.xml?api_key=API_KEY
+,,CB Balance Sheet as % of GDP,CBBS,https://www.quandl.com/api/v3/datasets/FRED/WALCL.xml?api_key=API_KEY
+,,Central Government Debt to GDP Ratio % (IMF),,https://www.quandl.com/api/v3/datasets/ODA/AUS_GGXWDG_NGDP.xml?api_key=API_KEY
+,,Central Government Revenue,Central Government Revenue as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/AUS_GGR_NGDP.xml?api_key=API_KEY
+,,Central Government Revenue,Central Government Revenue in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/AUS_GGR.xml?api_key=API_KEY
+,,Central Government Expenditures,Central Government Expenditures as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/AUS_GGX_NGDP.xml?api_key=API_KEY
+,,Central Government Expenditures,Central Government Expenditures in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/AUS_GGX.xml?api_key=API_KEY
+,,Interest / GDP,Interest Payments in Current LCU (World Bank),https://www.quandl.com/api/v3/datasets/WWDI/AUS_GC_XPN_INTP_CN.xml?api_key=API_KEY
+,,Government Bonds Benchmarks,Australian Government 10Y Bond Monthly (Reserve Bank Australia RBA),https://www.quandl.com/api/v3/datasets/RBA/F02_1_FCMYGBAG10.xml?api_key=API_KEY
+,,Central Bank B Balance Sheet,Central Bank Assets and Liabilities (Reserve Bank Australia RBA),https://www.quandl.com/api/v3/datasets/RBA/A01.xml?api_key=API_KEY
+,,Central Bank B Balance Sheet,Central Bank Balance Sheet (Reserve Bank Australia RBA),https://www.quandl.com/api/v3/datasets/RBA/B02.xml?api_key=API_KEY
+,,Central Bank B Balance Sheet,Central Bank Balance Sheet - Total (Reserve Bank Australia RBA),https://www.quandl.com/api/v3/datasets/RBA/B02_BBCGOTOS.xml?api_key=API_KEY
+,,COT Report,Cot Report - Australian Dollar,https://www.quandl.com/api/v3/datasets/CFTC/232741_F_ALL_OI.xml?api_key=API_KEY
 ,,Balance Of Payments,BOP - Australia,https://docs.google.com/spreadsheets/d/1N5AEeZboCgbs0eQstf-Bhmid67j-C3EiitUThDD_fSY/
-Stock Market Data,,Stock Market Index,"Stock Market (Quandl, Wiki Continuous Futures)",https://www.quandl.com/api/v3/datasets/CHRIS/ASX_AP1.xml?api_key=API_KEY_TO_ADD
-GDP Growth,,Real GDP,GDP Growth (Annualised),https://www.quandl.com/api/v3/datasets/ODA/AUS_NGDP_R.xml?api_key=API_KEY_TO_ADD
+Stock Market Data,,Stock Market Index,"Stock Market (Quandl, Wiki Continuous Futures)",https://www.quandl.com/api/v3/datasets/CHRIS/ASX_AP1.xml?api_key=API_KEY
+GDP Growth,,Real GDP,GDP Growth (Annualised),https://www.quandl.com/api/v3/datasets/ODA/AUS_NGDP_R.xml?api_key=API_KEY
 ,,Real GDP,GDP Growth (Quarterly),https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=off&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=AUSGDPRQDSMEI
-,,Real GDP,GDP Growth Annualised in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/AUS_NGDPD.xml?api_key=API_KEY_TO_ADD
+,,Real GDP,GDP Growth Annualised in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/AUS_NGDPD.xml?api_key=API_KEY

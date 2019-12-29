@@ -4,30 +4,30 @@ Leading Indicators Surveys,,PMI Manufacturing Index,PMI Manifacturing Index (Mar
 ,,NMI Non Manifacturing,PMI Services Index (Markit),https://www.investing.com/economic-calendar/services-pmi-274
 ,,Consumer Sentiment Index,Consumer Confidence Indicator (ECBCS),https://uk.investing.com/economic-calendar/gfk-consumer-confidence-330
 ,,Building Permits,BP,https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/814220/LiveTable208.xlsx
-Money Supply,,Broad Money M2,M2 Broad Money (current LCU),https://www.quandl.com/api/v3/datasets/OECD/MEI_FIN_MABM_GBR_M.xml?api_key=API_KEY_TO_ADD
+Money Supply,,Broad Money M2,M2 Broad Money (current LCU),https://www.quandl.com/api/v3/datasets/OECD/MEI_FIN_MABM_GBR_M.xml?api_key=API_KEY
 Interest Rates,,Interest Rates %,Bank interest rate Decision - Investing.com,https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=off&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=IRSTCI01GBM156N&scale=left&cosd=1978-01-01&coed=2019-05-01&line_color=%234572a7&link_values=false&line_style=solid&mark_type=none&mw=3&lw=2&ost=-99999&oet=99999&mma=0&fml=a&fq=Monthly&fam=avg&fgst=lin&fgsnd=2009-06-01&line_index=1&transformation=lin&vintage_date=2019-12&revision_date=2019-12&nd=1978-01-01
-Inflation,,Consumer and Business Inflation,CPI (Inflation Rates),https://www.quandl.com/api/v3/datasets/RATEINF/CPI_GBR.xml?api_key=API_KEY_TO_ADD
-,,,PPI OECD QUANDL,https://www.quandl.com/api/v3/datasets/OECD/KEI_PIEAMP01_GBR_ST_M.xml?api_key=API_KEY_TO_ADD
-Employment,,Employment,Total Labor Force (European Commission Macro Release),https://www.quandl.com/api/v3/datasets/AMECO/GBR_1_0_0_0_NLTN.xml?api_key=API_KEY_TO_ADD
-,,Central Government Debt to GDP Ratio % (IMF),,https://www.quandl.com/api/v3/datasets/ODA/GBR_GGXWDG_NGDP.xml?api_key=API_KEY_TO_ADD
-,,Central Government Revenue,Central Government Revenue as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/GBR_GGR_NGDP.xml?api_key=API_KEY_TO_ADD
-,,,Central Government Revenue in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/GBR_GGR.xml?api_key=API_KEY_TO_ADD
-,,Central Government Expenditures,Central Government Expenditures as % of GDP (EuroStat),https://www.quandl.com/api/v3/datasets/ODA/GBR_GGX_NGDP.xml?api_key=API_KEY_TO_ADD
-,,,Central Government Expenditures in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/GBR_GGX.xml?api_key=API_KEY_TO_ADD
-,,Interest / GDP,Interest Payments As % of GDP (World Bank),https://www.quandl.com/api/v3/datasets/WWDI/GBR_GC_XPN_INTP_RV_ZS.xml?api_key=API_KEY_TO_ADD
-,,Government Bonds Benchmarks,Government 10Y Bond Monthly (Bank Of England QUANDL),https://www.quandl.com/api/v3/datasets/BOE/IUDMNPY.xml?api_key=API_KEY_TO_ADD
+Inflation,,Consumer and Business Inflation,CPI (Inflation Rates),https://www.quandl.com/api/v3/datasets/RATEINF/CPI_GBR.xml?api_key=API_KEY
+,,,PPI OECD QUANDL,https://www.quandl.com/api/v3/datasets/OECD/KEI_PIEAMP01_GBR_ST_M.xml?api_key=API_KEY
+Employment,,Employment,Total Labor Force (European Commission Macro Release),https://www.quandl.com/api/v3/datasets/AMECO/GBR_1_0_0_0_NLTN.xml?api_key=API_KEY
+,,Central Government Debt to GDP Ratio % (IMF),,https://www.quandl.com/api/v3/datasets/ODA/GBR_GGXWDG_NGDP.xml?api_key=API_KEY
+,,Central Government Revenue,Central Government Revenue as % of GDP (IMF),https://www.quandl.com/api/v3/datasets/ODA/GBR_GGR_NGDP.xml?api_key=API_KEY
+,,,Central Government Revenue in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/GBR_GGR.xml?api_key=API_KEY
+,,Central Government Expenditures,Central Government Expenditures as % of GDP (EuroStat),https://www.quandl.com/api/v3/datasets/ODA/GBR_GGX_NGDP.xml?api_key=API_KEY
+,,,Central Government Expenditures in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/GBR_GGX.xml?api_key=API_KEY
+,,Interest / GDP,Interest Payments As % of GDP (World Bank),https://www.quandl.com/api/v3/datasets/WWDI/GBR_GC_XPN_INTP_RV_ZS.xml?api_key=API_KEY
+,,Government Bonds Benchmarks,Government 10Y Bond Monthly (Bank Of England QUANDL),https://www.quandl.com/api/v3/datasets/BOE/IUDMNPY.xml?api_key=API_KEY
 ,,Central Bank Balance Sheet (BoE),Bank Of England Weekly Report,
-,,,Weekly Amounts Outstanding Of Central Bank Sterling Reserve Balance Liabilities,https://www.quandl.com/api/v3/datasets/BOE/RPWB56A.xml?api_key=API_KEY_TO_ADD
+,,,Weekly Amounts Outstanding Of Central Bank Sterling Reserve Balance Liabilities,https://www.quandl.com/api/v3/datasets/BOE/RPWB56A.xml?api_key=API_KEY
 ,,,"Weekly Amounts Outstanding Of Central Bank Sterling Notes In Circulation Total (in Sterling Millions) Not Seasonally Adjusted
-",https://www.quandl.com/api/v3/datasets/BOE/RPWB55A.xml?api_key=API_KEY_TO_ADD
-,,,Weekly Amounts Outstanding Of Central Bank Sterling Indexed Long-term Repos With Bank Of England Counterparties (in Sterling Millions) Not Seasonally Adjusted,https://www.quandl.com/api/v3/datasets/BOE/RPWZ4TJ.xml?api_key=API_KEY_TO_ADD
-,,,Weekly Amounts Outstanding Of Central Bank Sterling Denominated Bond Holdings Total (in Sterling Millions) Not Seasonally Adjusted,https://www.quandl.com/api/v3/datasets/BOE/RPWZ4TL.xml?api_key=API_KEY_TO_ADD
-,,,Weekly Amounts Outstanding Of Central Bank Sterling Loan To Asset Purchase Facility Total (in Sterling Millions) Not Seasonally Adjusted,https://www.quandl.com/api/v3/datasets/BOE/RPWZ4TM.xml?api_key=API_KEY_TO_ADD
-,,,Weekly Amounts Outstanding Of Central Bank Foreign Currency Public Securities Issued Total (in Sterling Millions) Not Seasonally Adjusted,https://www.quandl.com/api/v3/datasets/BOE/RPWB59A.xml?api_key=API_KEY_TO_ADD
-,,,Weekly Amounts Outstanding Of Central Bank All Foreign Currency Reserve Assets Total (in Sterling Millions) Not Seasonally Adjusted,https://www.quandl.com/api/v3/datasets/BOE/RPWZ4TN.xml?api_key=API_KEY_TO_ADD
-,,COT Report,Cot Report - GBP FX,https://www.quandl.com/api/v3/datasets/CFTC/096742_F_ALL.xml?api_key=API_KEY_TO_ADD
+",https://www.quandl.com/api/v3/datasets/BOE/RPWB55A.xml?api_key=API_KEY
+,,,Weekly Amounts Outstanding Of Central Bank Sterling Indexed Long-term Repos With Bank Of England Counterparties (in Sterling Millions) Not Seasonally Adjusted,https://www.quandl.com/api/v3/datasets/BOE/RPWZ4TJ.xml?api_key=API_KEY
+,,,Weekly Amounts Outstanding Of Central Bank Sterling Denominated Bond Holdings Total (in Sterling Millions) Not Seasonally Adjusted,https://www.quandl.com/api/v3/datasets/BOE/RPWZ4TL.xml?api_key=API_KEY
+,,,Weekly Amounts Outstanding Of Central Bank Sterling Loan To Asset Purchase Facility Total (in Sterling Millions) Not Seasonally Adjusted,https://www.quandl.com/api/v3/datasets/BOE/RPWZ4TM.xml?api_key=API_KEY
+,,,Weekly Amounts Outstanding Of Central Bank Foreign Currency Public Securities Issued Total (in Sterling Millions) Not Seasonally Adjusted,https://www.quandl.com/api/v3/datasets/BOE/RPWB59A.xml?api_key=API_KEY
+,,,Weekly Amounts Outstanding Of Central Bank All Foreign Currency Reserve Assets Total (in Sterling Millions) Not Seasonally Adjusted,https://www.quandl.com/api/v3/datasets/BOE/RPWZ4TN.xml?api_key=API_KEY
+,,COT Report,Cot Report - GBP FX,https://www.quandl.com/api/v3/datasets/CFTC/096742_F_ALL.xml?api_key=API_KEY
 ,,Balance of Payments,BOP,https://www.ons.gov.uk/file?uri=/economy/nationalaccounts/balanceofpayments/datasets/balanceofpayments/current/pnbp.csv
-Stock Market Data,,Stock Market Index,"Stock Market (Quandl, Wiki Continuous Futures)",https://www.quandl.com/api/v3/datasets/CHRIS/LIFFE_Z1.xml?api_key=API_KEY_TO_ADD
-GDP Growth,,Real GDP,GDP Growth Annualised in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/GBR_NGDPD.csv?api_key=API_KEY_TO_ADD
+Stock Market Data,,Stock Market Index,"Stock Market (Quandl, Wiki Continuous Futures)",https://www.quandl.com/api/v3/datasets/CHRIS/LIFFE_Z1.xml?api_key=API_KEY
+GDP Growth,,Real GDP,GDP Growth Annualised in USD (IMF),https://www.quandl.com/api/v3/datasets/ODA/GBR_NGDPD.csv?api_key=API_KEY
 ,,,GDP Growth (Quarterly) (Constant LCU) FRED,https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=off&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=CLVMNACSCAB1GQUK&scale=left&cosd=1975-01-01&coed=2019-01-01&line_color=%234572a7&link_values=false&line_style=solid&mark_type=none&mw=3&lw=2&ost=-99999&oet=99999&mma=0&fml=a&fq=Quarterly&fam=avg&fgst=lin&fgsnd=2009-06-01&line_index=1&transformation=lin&vintage_date=2019-12-19&revision_date=2019-12-19&nd=1975-01-01
-,,,GDP Growth Annualised (Constant LCU) IMF,https://www.quandl.com/api/v3/datasets/ODA/GBR_NGDP_R.csv?api_key=API_KEY_TO_ADD
+,,,GDP Growth Annualised (Constant LCU) IMF,https://www.quandl.com/api/v3/datasets/ODA/GBR_NGDP_R.csv?api_key=API_KEY

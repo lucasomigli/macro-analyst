@@ -3,6 +3,10 @@
 # Edit at https://www.gitignore.io/?templates=python
 
 ### Python ###
+
+# API Keys
+macroanalyst/keys.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

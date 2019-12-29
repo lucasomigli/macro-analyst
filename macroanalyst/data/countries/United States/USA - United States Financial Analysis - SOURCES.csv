@@ -1,29 +1,29 @@
 Driver Analysis,,Driver,Code,Source
-Leading Indicators Surveys,,ISM Manifacturing,ISM,https://www.quandl.com/api/v3/datasets/ISM/MAN_PMI.xml?api_key=API_KEY_TO_ADD
-,,ISM NMI Non Manifacturing,NMI,https://www.quandl.com/api/v3/datasets/ISM/NONMAN_NMI.xml?api_key=API_KEY_TO_ADD
-,,Consumer Sentiment Index,UMCSI,https://www.quandl.com/api/v3/datasets/UMICH/SOC1.xml?api_key=API_KEY_TO_ADD
+Leading Indicators Surveys,,ISM Manifacturing,ISM,https://www.quandl.com/api/v3/datasets/ISM/MAN_PMI.xml?api_key=API_KEY
+,,ISM NMI Non Manifacturing,NMI,https://www.quandl.com/api/v3/datasets/ISM/NONMAN_NMI.xml?api_key=API_KEY
+,,Consumer Sentiment Index,UMCSI,https://www.quandl.com/api/v3/datasets/UMICH/SOC1.xml?api_key=API_KEY
 ,,Building Permits,BP,https://www.census.gov/construction/nrc/xls/permits_cust.xls
-Money Supply,,M2,M2,https://www.quandl.com/api/v3/datasets/FRED/M2SL.xml?api_key=API_KEY_TO_ADD
-Interest Rates,,Federal Reserve Benchmark Rate,IR%,https://www.quandl.com/api/v3/datasets/FRED/FEDFUNDS.xml?api_key=API_KEY_TO_ADD
-Inflation,,Consumer and Business Inflation,CPIAUCSL,https://www.quandl.com/api/v3/datasets/FRED/CPIAUCSL.xml?api_key=API_KEY_TO_ADD
-,,Consumer and Business Inflation,CPILFESL,https://www.quandl.com/api/v3/datasets/FRED/CPILFESL.xml?api_key=API_KEY_TO_ADD
-,,Consumer and Business Inflation,PPI All,https://www.quandl.com/api/v3/datasets/FRED/PPIFGS.xml?api_key=API_KEY_TO_ADD
-,,Consumer and Business Inflation,PPI Core,https://www.quandl.com/api/v3/datasets/FRED/PPILFE.xml?api_key=API_KEY_TO_ADD
-Employment,,Employment Situation Report (ESR),NFP,https://www.quandl.com/api/v3/datasets/BLSE/CEU0000000001.xml?api_key=API_KEY_TO_ADD
-Balance Sheets and Sovereign Risk,,Government Debt to GDP Ratio,Govt,https://www.quandl.com/api/v3/datasets/FRED/GFDEGDQ188S.csv?api_key=API_KEY_TO_ADD
-,,Government S/D % GDP,Govt,https://www.quandl.com/api/v3/datasets/FRED/FYFR.xml?api_key=API_KEY_TO_ADD
-,,Interest / GDP,Govt,https://www.quandl.com/api/v3/datasets/FRED/FYONET.xml?api_key=API_KEY_TO_ADD
-,,Liquidity,Govt,https://www.quandl.com/api/v3/datasets/FRED/FYOINT.xml?api_key=API_KEY_TO_ADD
-,,US 10 Treasury Benchmark,Govt,https://www.quandl.com/api/v3/datasets/FRED/GS10.xml?api_key=API_KEY_TO_ADD
-,,CB Balance Sheet as % of GDP,CBBS,https://www.quandl.com/api/v3/datasets/FRED/WALCL.xml?api_key=API_KEY_TO_ADD
-Balance Sheets and Sovereign Risk (Sources),,Federal Debt,Govt,https://www.quandl.com/api/v3/datasets/ODA/USA_GGXWDG_NGDP.xml?api_key=API_KEY_TO_ADD
-,,Federal Receipts,Govt,https://www.quandl.com/api/v3/datasets/ODA/USA_GGR_NGDP.xml?api_key=API_KEY_TO_ADD
-,,Federal Outlays,Govt,https://www.quandl.com/api/v3/datasets/ODA/USA_GGX_NGDP.xml?api_key=API_KEY_TO_ADD
+Money Supply,,M2,M2,https://www.quandl.com/api/v3/datasets/FRED/M2SL.xml?api_key=API_KEY
+Interest Rates,,Federal Reserve Benchmark Rate,IR%,https://www.quandl.com/api/v3/datasets/FRED/FEDFUNDS.xml?api_key=API_KEY
+Inflation,,Consumer and Business Inflation,CPIAUCSL,https://www.quandl.com/api/v3/datasets/FRED/CPIAUCSL.xml?api_key=API_KEY
+,,Consumer and Business Inflation,CPILFESL,https://www.quandl.com/api/v3/datasets/FRED/CPILFESL.xml?api_key=API_KEY
+,,Consumer and Business Inflation,PPI All,https://www.quandl.com/api/v3/datasets/FRED/PPIFGS.xml?api_key=API_KEY
+,,Consumer and Business Inflation,PPI Core,https://www.quandl.com/api/v3/datasets/FRED/PPILFE.xml?api_key=API_KEY
+Employment,,Employment Situation Report (ESR),NFP,https://www.quandl.com/api/v3/datasets/BLSE/CEU0000000001.xml?api_key=API_KEY
+Balance Sheets and Sovereign Risk,,Government Debt to GDP Ratio,Govt,https://www.quandl.com/api/v3/datasets/FRED/GFDEGDQ188S.csv?api_key=API_KEY
+,,Government S/D % GDP,Govt,https://www.quandl.com/api/v3/datasets/FRED/FYFR.xml?api_key=API_KEY
+,,Interest / GDP,Govt,https://www.quandl.com/api/v3/datasets/FRED/FYONET.xml?api_key=API_KEY
+,,Liquidity,Govt,https://www.quandl.com/api/v3/datasets/FRED/FYOINT.xml?api_key=API_KEY
+,,US 10 Treasury Benchmark,Govt,https://www.quandl.com/api/v3/datasets/FRED/GS10.xml?api_key=API_KEY
+,,CB Balance Sheet as % of GDP,CBBS,https://www.quandl.com/api/v3/datasets/FRED/WALCL.xml?api_key=API_KEY
+Balance Sheets and Sovereign Risk (Sources),,Federal Debt,Govt,https://www.quandl.com/api/v3/datasets/ODA/USA_GGXWDG_NGDP.xml?api_key=API_KEY
+,,Federal Receipts,Govt,https://www.quandl.com/api/v3/datasets/ODA/USA_GGR_NGDP.xml?api_key=API_KEY
+,,Federal Outlays,Govt,https://www.quandl.com/api/v3/datasets/ODA/USA_GGX_NGDP.xml?api_key=API_KEY
 ,,Interest Bill,Govt,https://fred.stlouisfed.org/graph/fredgraph.csv?bgcolor=%23e1e9f0&chart_type=line&drp=0&fo=open%20sans&graph_bgcolor=%23ffffff&height=450&mode=fred&recession_bars=on&txtcolor=%23444444&ts=12&tts=12&width=1168&nt=0&thu=0&trc=0&show_legend=yes&show_axis_titles=yes&show_tooltip=yes&id=FYOIGDA188S&scale=left&cosd=1940-01-01&coed=2018-01-01&line_color=%234572a7&link_values=false&line_style=solid&mark_type=none&mw=3&lw=2&ost=-99999&oet=99999&mma=0&fml=a&fq=Annual&fam=avg&fgst=lin&fgsnd=2009-06-01&line_index=1&transformation=lin&vintage_date=2019-12-19&revision_date=2019-12-19&nd=1940-01-01
-,,US 10 Treasury Benchmark,Govt,https://www.quandl.com/api/v3/datasets/FRED/GS10.xml?api_key=API_KEY_TO_ADD
-,,CB Balance Sheet as % of GDP,CBBS,https://www.quandl.com/api/v3/datasets/FRED/WALCL.xml?api_key=API_KEY_TO_ADD
+,,US 10 Treasury Benchmark,Govt,https://www.quandl.com/api/v3/datasets/FRED/GS10.xml?api_key=API_KEY
+,,CB Balance Sheet as % of GDP,CBBS,https://www.quandl.com/api/v3/datasets/FRED/WALCL.xml?api_key=API_KEY
 ,,COT Report,Cot Report - US Dollar,https://www.cftc.gov/files/dea/history/fut_fin_xls_2019.zip
 ,,Balance Of Payments,BOP - United States,"https://apps.bea.gov/iTable/iTable.cfm?reqid=62&step=6&isuri=1&tablelist=1&product=1&filter_--3=2,11,14,17,22,27,33,36,44&thetableflexibleiipita=1&filter_--2=1&filter_--1=0"
-Stock Market Data,,Stock Market Index,"Stock Market (Quandl, Wiki Continuous Futures)",https://www.quandl.com/api/v3/datasets/CHRIS/CME_SP1.csv?api_key=API_KEY_TO_ADD
-GDP Growth,,Real GDP,GDP Growth (Annualised),https://www.quandl.com/api/v3/datasets/ODA/USA_NGDP_R.xml?api_key=API_KEY_TO_ADD
-,,Real GDP,GDP Growth (Quarterly),https://www.quandl.com/api/v3/datasets/FRED/GDPC1.xml?api_key=API_KEY_TO_ADD
+Stock Market Data,,Stock Market Index,"Stock Market (Quandl, Wiki Continuous Futures)",https://www.quandl.com/api/v3/datasets/CHRIS/CME_SP1.csv?api_key=API_KEY
+GDP Growth,,Real GDP,GDP Growth (Annualised),https://www.quandl.com/api/v3/datasets/ODA/USA_NGDP_R.xml?api_key=API_KEY
+,,Real GDP,GDP Growth (Quarterly),https://www.quandl.com/api/v3/datasets/FRED/GDPC1.xml?api_key=API_KEY
