@@ -66,6 +66,8 @@ Websites to be scraped (NO API nor direct link available):
 
 ## China
 
+| Indicator | Source | Comment |
+| :---         |     :---:      |          ---: |
 | PMI   | Investing.com | Scrape website  |
 | NMI   | Investing.com | Scrape website  |
 | BOP   | api.db.nomics     | Create separate chart for specific CSV  |
@@ -73,12 +75,16 @@ Websites to be scraped (NO API nor direct link available):
 
 ## Japan
 
+| Indicator | Source | Comment |
+| :---         |     :---:      |          ---: |
 | PMI   | Investing.com | Scrape website  |
 | CSI   | esri.cao.go.jp | .xlsx file  |
 | BOP   | mof.go.jp     | Create separate chart for specific CSV |
 
 ## New Zealand
 
+| Indicator | Source | Comment |
+| :---         |     :---:      |          ---: |
 | PMI   | businessnz.org | .xls file  |
 | PSI Services   | businessnz.org | .xls file  |
 | M2 Money Supply   | rbnz.govt.nz     | .xlsx file |
@@ -86,6 +92,8 @@ Websites to be scraped (NO API nor direct link available):
 
 ## Norway
 
+| Indicator | Source | Comment |
+| :---         |     :---:      |          ---: |
 | PMI   | Investing.com | Scrape website  |
 | Building Permits   | sdw.ecb.europa.eu | .xls file  |
 | COT Report | Missing | Google Sheet id: 144GCj8WXvzM0H7xSmyWhE5KbtLPpj0wY5vJdEzyTK2o |
@@ -93,6 +101,8 @@ Websites to be scraped (NO API nor direct link available):
 
 ## Sweden
 
+| Indicator | Source | Comment |
+| :---         |     :---:      |          ---: |
 | PMI   | Investing.com | Scrape website  |
 | PMI Services  | Investing.com | Scrape website  |
 | Building Permits   | sdw.ecb.europa.eu | .xls file  |
@@ -102,6 +112,8 @@ Websites to be scraped (NO API nor direct link available):
 
 ## Russia
 
+| Indicator | Source | Comment |
+| :---         |     :---:      |          ---: |
 | PMI   | Investing.com | Scrape website  |
 | PMI Services  | Investing.com | Scrape website  |
 | BOP   | api.db.nomics     | Create separate chart for specific CSV |
@@ -110,6 +122,8 @@ Websites to be scraped (NO API nor direct link available):
 
 ## South Africa
 
+| Indicator | Source | Comment |
+| :---         |     :---:      |          ---: |
 | PMI   | Investing.com | Scrape website  |
 | Employment  | statssa.gov | .xlsx file  |
 | Central Bank Balace Sheet   | resbank.co.za     | .csv file to format |
@@ -118,4 +132,6 @@ Websites to be scraped (NO API nor direct link available):
 
 ## Switzerland
 
+| Indicator | Source | Comment |
+| :---         |     :---:      |          ---: |
 | PMI   | Investing.com | Scrape website  |
