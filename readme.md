@@ -1,6 +1,6 @@
 # 📈 Macro-Analyst 
 
-## **@Luca** Critical changes to directory are discussed below:
+## 👉 **@Luca** Critical changes to directory are discussed below:
 Future changes will be committed solely to changelog.md and appended to each PR
 ```md
 ├── application
@@ -49,7 +49,7 @@ Essentially, what I've done, after relying heavily on the [following article](ht
 In this way, if we ever want to extend the application in ways that Plotly/Dash prohibits outside of their enterprise version, we can do so without restriction. For instance, incorporating user models and login/logout functionality.
 
 
-## ✔️ About
+## About
 
 This project was born as a series of attempts of combining together macro economical indicators and data coming from different sources in Google Sheets. Later on, this converted into the decision of building an easily accessible and free-to-use web-app. The idea is to put together an analyser that could help traders, economists and other people to have a better understanding of macro economical activity in specific countries. This way, people could benefit in both their trading and understanding of changes in business cycles. 
 
@@ -78,7 +78,7 @@ Most of data is coming from:
 
 Where missing, some data is scraped from investing.com that provides a download section for getting historical data. 
 
-## 📑 What to work on
+## What to work on
 As for now, I do have data for these countries: Australia, United States, Europe, Great Britain, Canada, Switzerland, China, Japan, Norway, New Zealand, Russia, Sweden, South Africa. The idea is obviously to expand to more in the future. 
 Generally speaking, main concepts to work on are:
 - Connect to APIs and download automatically and periodically data.

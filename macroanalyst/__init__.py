@@ -19,12 +19,39 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 
+"""
+==================================================================
+Note: refer to changelog for some elaboration on proposed changes
+==================================================================
+""" 
+
 
 # =============================
 # Flask app
 # =============================
 
-app = Flask(__name__)
+from flask import Flask
+
+def create_app():
+    """
+    Constructs the core application
+    """
+    app = Flask(__name__,
+                instance_relative_config=False)
+    app.config.from_object('config.Config')
+
+    with app.app_context():
+
+        # Import main Blueprint
+        from application import routes
+        app.register_blueprint(routes.main_bp)
+
+        # Import Dash application and register it
+        # with the parent Flask app
+        from application.dash_app.dashboard import Add_Dash
+        app = Add_Dash(app)
+
+        return app
 
 # Config
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
@@ -180,20 +207,3 @@ def update_figure(chart_type, country_name, code_name):
         'data': charts.side_traces,
         'layout': charts.main_layout
     }]
-
-
-@app.route("/")
-def index():
-    return render_template('home.html')
-
-
-@app.route('/main')
-def main():
-    return render_template('main.html')
-
-
-@app.route('/dash/<name>')
-def update_chart(name):
-    return dict(
-        indicator=Indicator.query.filter_by(country=name)
-    )
