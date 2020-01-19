@@ -1,3 +1,9 @@
+"""
+==================================================================
+Note: refer to changelog for some elaboration on proposed changes
+==================================================================
+"""
+
 from macroanalyst import create_app
 
 def main():

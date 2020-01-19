@@ -3,12 +3,14 @@
 # =============================
 
 from dash import Dash
+from dash.dependencies import Input, Output, State
 import dash_table
+import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 
-from .layout import html_layout
+from .base_layout import html_layout
 
 
 def Add_Dash(server):
@@ -22,7 +24,7 @@ def Add_Dash(server):
     Everything below '/dashboard/' is served by Dash.
     Everything above it is served up with Flask.
     """
-    external_stylesheets = ['/static/css/styles.css',
+    external_stylesheets = [dbc.themes.BOOTSTRAP,
                             'https://fonts.googleapis.com/css?family=Lato',
                             'https://use.fontawesome.com/releases/v5.8.1/css/all.css']
     external_scripts = ['/static/js/main.js']
@@ -33,39 +35,107 @@ def Add_Dash(server):
                     # Establish domain hierarchy
                     routes_pathname_prefix='/dashboard/')
 
+    # =============================
+    #  Variable Declarations
+    # =============================
+    
     # Override the underlying HTML template
     dash_app.index_string = html_layout
+    
+    PLOTLY_LOGO = "https://images.plot.ly/logo/new-branding/plotly-logomark.png"
 
-    # =================================
-    #  Dash app: Layout described here
-    # =================================
-    dash_app.layout = html.Div(
-        children=[ 
-            html.H1(children='Hello Dash'),
+    search_bar = dbc.Row(
+        [
+            dbc.Col(dbc.Input(type="search", placeholder="Search")),
+            dbc.Col(
+                dbc.Button("Search", color="secondary", className="ml-2"),
+                width="auto",
+            ),
+        ],
+        no_gutters=True,
+        className="ml-auto flex-nowrap mt-3 mt-md-0",
+        align="center",
+    )
 
-            html.Div(children='''
-                Dash: A web application framework for Python.
-            '''),
-
-            dcc.Graph(
-                id='example-graph',
-                figure={
-                    'data': [
-                        {'x': [1, 2, 3], 'y': [4, 1, 2], 'type': 'bar', 'name': 'SF'},
-                        {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
+    navbar = dbc.Navbar(
+        [
+            html.A(
+                # Use row and col to control vertical alignment of logo / brand
+                dbc.Row(
+                    [
+                        dbc.Col(html.Img(src=PLOTLY_LOGO, height="30px")),
+                        dbc.Col(dbc.NavbarBrand("MacroAnalyst", className="ml-2")),
                     ],
-                    'layout': {
-                        'title': 'Dash Data Visualization'
-                    }
-                }
+                    align="center",
+                    no_gutters=True,
+                ),
+                href="/",
+            ),
+            dbc.NavbarToggler(id="navbar-toggler"),
+            dbc.Collapse(search_bar, id="navbar-collapse", navbar=True),
+        ],
+        color="dark",
+        dark=True,
+    )
+
+    body = dbc.Container(
+        [
+            dbc.Row(
+                [
+                    dbc.Col(
+                        [
+                            html.H2("Heading"),
+                            html.P(
+                                """\
+                                Donec id elit non mi porta gravida at eget metus.
+                                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+                                nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+                                malesuada magna mollis euismod. Donec sed odio dui. Donec id elit non
+                                mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+                                commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+                                amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed
+                                odio dui."""
+                            ),
+                            dbc.Button("View details", color="secondary"),
+                        ],
+                        md=4,
+                    ),
+                    dbc.Col(
+                        [
+                            html.H2("Graph"),
+                            dcc.Graph(
+                                figure={"data": [{"x": [1, 2, 3], "y": [1, 4, 9]}]}
+                            ),
+                        ]
+                    ),
+                ]
             )
         ],
-        id='dash-container'
-        )
+        className="mt-4",
+    )
+    dash_app.layout = html.Div([navbar, body])
+
+    # Initialize callbacks after the application is loaded
+    init_callbacks(dash_app)
+
+    # Launch Application
     return dash_app.server
 
-""" Example dataset import """
-# def get_datasets():
+
+def init_callbacks(dash_app):
+
+    @dash_app.callback(
+        Output("navbar-collapse", "is_open"),
+        [Input("navbar-toggler", "n_clicks")],
+        [State("navbar-collapse", "is_open")],
+    )
+    def toggle_navbar_collapse(n, is_open):
+        """Preserves navbar collapse state"""
+        if n:
+            return not is_open
+        return is_open
+
+#    def get_datasets():
 #     """Return previews of all CSVs saved in /data directory."""
 #     p = Path('.')
 #     data_filepath = list(p.glob('data/*.csv'))
@@ -81,7 +151,6 @@ def Add_Dash(server):
 #         )
 #         arr.append(table_preview)
 #     return arr
-
 
 
 
