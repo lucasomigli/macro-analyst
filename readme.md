@@ -1,12 +1,16 @@
 # 📈 Macro-Analyst 
 
-## 👉 **@Luca** Critical changes to directory are discussed below:
+## ❗️❗️ **@Luca** Proposed changes to directory are discussed below:
 Future changes will be committed solely to changelog.md and appended to each PR
 ```md
-├── application
+├── data
+│   ├── countries
+│   ├── data.md
+│   └── sp500.csv
+├── macroanalyst
 │   ├── dash_app
-│   │   ├── dashboard.py
-│   │   └── layout.py
+│   │   ├── dashboard.py 👈 [primary dash_app logic]
+│   │   └── layout.py 👈 [primary dash_app logic]
 │   ├── static
 │   │   ├── css
 │   │   │   └── master.css
@@ -17,18 +21,19 @@ Future changes will be committed solely to changelog.md and appended to each PR
 │   │   ├── scss
 │   │   └── vendor
 │   ├── templates
-│   │   └── index.html
-│   ├── __init__.py
+│   │   └── index.html 👈 [landing page template]
+│   ├── __init__.py 
 │   ├── forms.py
 │   ├── models.py
-│   └── routes.py
-├── data
-├── config.py
-├── run.py
+│   └── routes.py 👈 [refactored for separation of concerns]
 ├── changelog.md
-└── README.md
+├── config.py
+├── README.md
+├── requirements.txt
+├── start.sh 👈 [script for launching on eventual deployment]
+└── wsgi.py 👈 [run.py in another life. wsgi is simply a 'calling convention']
 ```
-## 👉 **@Luca** Changelog and Reasoning
+## ❗️❗️ **@Luca** Changelog and Reasoning
 
 Core application logic can be found in directory `/application`.
 
