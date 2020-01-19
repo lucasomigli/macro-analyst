@@ -3,35 +3,35 @@
 ## ❗️❗️ **@Luca** Proposed changes to directory are discussed below:
 Future changes will be committed solely to changelog.md and appended to each PR
 ```md
-├── data
+├── 📂data
 │   ├── countries
 │   ├── data.md
 │   └── sp500.csv
-├── macroanalyst
-│   ├── dash_app
-│   │   ├── dashboard.py 👈 [primary dash_app logic]
-│   │   └── layout.py 👈 [primary dash_app logic]
-│   ├── static
-│   │   ├── css
+├── 📂macroanalyst
+│   ├── 📂dash_app
+│   │   ├── dashboard.py 〰️ [primary dash_app logic]
+│   │   └── layout.py 〰️ [primary dash_app logic]
+│   ├── 📂static
+│   │   ├── 📂css
 │   │   │   └── master.css
-│   │   ├── img
+│   │   ├── 📂img
 │   │   │   └── bg-masthead.jpg
-│   │   ├── js
+│   │   ├── 📂js
 │   │   │   └── creative.min.js
-│   │   ├── scss
-│   │   └── vendor
-│   ├── templates
-│   │   └── index.html 👈 [landing page template]
-│   ├── __init__.py 
+│   │   ├── 📂scss
+│   │   └── 📂vendor
+│   ├── 📂templates
+│   │   └── index.html 〰️ [landing page template]
+│   ├── __init__.py 〰️ [primary flask_app logic]
 │   ├── forms.py
 │   ├── models.py
-│   └── routes.py 👈 [refactored for separation of concerns]
+│   └── routes.py 〰️ [refactored for separation of concerns]
 ├── changelog.md
-├── config.py
+├── config.py 〰️ [primary config for flask_app logic]
 ├── README.md
 ├── requirements.txt
-├── start.sh 👈 [script for launching on eventual deployment]
-└── wsgi.py 👈 [run.py in another life. wsgi is simply a 'calling convention']
+├── start.sh 〰️ [script for launching on eventual deployment]
+└── wsgi.py 〰️ [run.py in another life. wsgi is simply a 'calling convention']
 ```
 ## ❗️❗️ **@Luca** Changelog and Reasoning
 
