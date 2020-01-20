@@ -17,7 +17,7 @@ html_layout = '''<!DOCTYPE html>
                                 <footer class="bg-light py-5">
                                     <div class="container"">
                                         <p class="text-center text-muted mb-0">Made with <i class="fas fa-heart text-danger mb-4"></i> in four time zones.</p>
-                                        <div class="small text-center text-muted">Copyright &copy; 2019 - <a href="#">Licensing information</a>
+                                        <div class="small text-center text-muted">Copyright &copy; 2020 - <a href="#">Licensing information</a>
                                         </div>
                                     </div>
                                 </footer>

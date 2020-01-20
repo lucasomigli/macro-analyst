@@ -2,6 +2,7 @@
 #  Dash app
 # =============================
 
+import os
 import dash
 from dash import Dash
 from dash.dependencies import Input, Output, State
@@ -11,8 +12,9 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 
-from .base_layout import html_layout
-from .navbar import navbar
+from .layouts import *
+from .layouts.base import html_layout
+from .layouts.navbar import navbar
 
 
 def Add_Dash(server):
@@ -35,141 +37,91 @@ def Add_Dash(server):
                     external_stylesheets=external_stylesheets,
                     external_scripts=external_scripts,
                     # Establish domain hierarchy
-                    routes_pathname_prefix='/dashboard/')
-
-    # =============================
-    #  Dash app Config
-    # =============================
-
-    # Config
-    # dash_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
-    #     os.path.join(os.path.abspath(os.path.dirname(__file__)), 'db.sqlite')
-    # dash_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+                    routes_pathname_prefix='/analyze/')
 
     # Silence exception to elements not existing until callback execution
     dash_app.config.suppress_callback_exceptions = True
 
     # =============================
-    #  Front-End Var Declarations
+    #  Front-End SPA Instantiation
     # =============================
     
     # Override the underlying HTML template
     dash_app.index_string = html_layout
 
-    # body = dbc.Container(
-    #     [
-    #         dbc.Row(
-    #             [
-    #                 dbc.Col(
-    #                     [
-    #                         html.H2("Filters"),
-    #                         dbc.Form([
-    #                             dbc.FormGroup(
-    #                                 [
-    #                                     dbc.Label("Country", html_for="country"),
-    #                                     dcc.Dropdown(
-    #                                         id="country",
-    #                                         options=[
-    #                                             {"label": "Option 1", "value": 1},
-    #                                             {"label": "Option 2", "value": 2},
-    #                                         ],
-    #                                     ),
-    #                                     dbc.Label("Indicator", html_for="indicator"),
-    #                                     dcc.Dropdown(
-    #                                         id="indicator",
-    #                                         options=[
-    #                                             {"label": "Gross Domestic Product", "value": 1},
-    #                                             {"label": "Manufacturing Activity", "value": 2},
-    #                                             {"label": "Inventory Levels", "value": 3},
-    #                                             {"label": "Retail Sales", "value": 4},
-    #                                             {"label": "Building Permits", "value": 5},
-    #                                             {"label": "Housing Market", "value": 6},
-    #                                             {"label": "New Businesses", "value": 7},
-    #                                             {"label": "Income & Wages", "value": 8},
-    #                                             {"label": "Unemployment Rate", "value": 9},
-    #                                             {"label": "Consumer Price Index | Inflation", "value": 10},
-    #                                             {"label": "Currency Strength", "value": 11},
-    #                                             {"label": "Inventory Levels", "value": 12},
-    #                                             {"label": "Interest Rates", "value": 13},
-    #                                             {"label": "Corporate Profits", "value": 14},
-    #                                             {"label": "Balance of Trade", "value": 15},
-    #                                             {"label": "Value of Commodity Substitutes to USD", "value": 16},
-    #                                         ],
-    #                                     )
-    #                                 ],
-    #                                 className="mt-4"
-    #                             )
-    #                         ])       
-    #                     ],
-    #                     lg=4,
-    #                 ),
-    #                 html.Hr(className="my-2"),
-    #                 dbc.Col(
-    #                     [
-    #                         html.H2("Economic Data"),
-    #                         dcc.Graph(
-    #                             figure={"data": [{
-    #                                 "x": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], 
-    #                                 "y": [1, 4, 9, 11, 26, 24, 25, 32, 45, 67, 110, 112, 134, 123, 127, 113, 120, 135]}
-    #                             ]}
-    #                         ),
-    #                         dbc.FormGroup(
-    #                             [
-    #                                 dbc.Label("RangeSlider", html_for="range-slider"),
-    #                                 dcc.RangeSlider(id="range-slider", min=0, max=1000, value=[400, 700]),
-    #                             ]
-    #                         ),
-    #                     ]
-    #                 ),
-    #             ]
-    #         ),
-    #         html.Hr(className="my-2"),
-    #         dbc.Row(
-    #             [
-    #                 dbc.Col(
-    #                     [
-    #                         html.H2("Heading"),
-    #                         html.P(
-    #                             """This is sample text"""
-    #                         ),
-    #                     ]
-    #                 )
-    #             ]
-    #         )
-    #     ],
-    #     className="mt-4",
-    # )
-
     # Initialize callbacks before the application has finished loading
     init_callbacks(dash_app)
 
     dash_app.layout = html.Div([
+    
         # Represents the URL bar. Doesn't render anything
-
         dcc.Location(id='url', refresh=False),
 
-        # The following renders in every case
+        # The following elements render in every case
         navbar,
-        dcc.Link('Navigate to "/"', href='/'),
-        html.Br(),
-        dcc.Link('Navigate to "/page-2"', href='/page-2'),
 
         # Content is rendered in this element
         html.Div(id='page-content')
     ])
 
+
+    index_page = html.Div([
+        dcc.Link('Chart economic indicators', href='/indicators'),
+        html.Br(),
+        dcc.Link('Chart securities', href='/securities'),
+        html.Br(),
+        dcc.P('or,'),
+        html.Br(),
+        dcc.Link('Go here for help', href='/help'),
+    ])
+
+
+    indicators_layout = html.Div([
+        html.H1('Major Economic Indicators'),
+    ])
+
+
+
+    securities_layout = html.Div([
+        html.H1('Stocks & Bonds'),
+    ])
+
+
     # Launch Application
     return dash_app.server
 
 
+# =============================
+#  Callbacks
+# =============================
+
 def init_callbacks(dash_app):
+    """
+    This module contains various callback and nested functions.
+    """
     @dash_app.callback(dash.dependencies.Output('page-content', 'children'),
                         [dash.dependencies.Input('url', 'pathname')])
     
     def display_page(pathname):
-        return html.Div([
-            html.H3('You are on page {}'.format(pathname))
-        ])
+        """
+        Essentially serves as the Dash application's routing function
+
+        Args: pathname passed from href link objects
+        Returns: Page render that correlates to respective arg parameter
+        """
+        if pathname == '/indicators':
+            return indicators
+        elif pathname == '/securities':
+            return securities
+        elif pathname == '/help':
+            return help
+        else:
+            return index_page
+
+            # return html.Div([
+            #     html.h1('404 - PAGE NOT FOUND')
+            # ])
+
 
     # Pertains to navbar collapse on small viewports
     @dash_app.callback(
@@ -183,24 +135,6 @@ def init_callbacks(dash_app):
             return not is_open
         return is_open
     
-
-#    def get_datasets():
-#     """Return previews of all CSVs saved in /data directory."""
-#     p = Path('.')
-#     data_filepath = list(p.glob('data/*.csv'))
-#     arr = ['This is an example Plot.ly Dash App.']
-#     for index, csv in enumerate(data_filepath):
-#         df = pd.read_csv(data_filepath[index]).head(10)
-#         table_preview = dash_table.DataTable(
-#             id='table_' + str(index),
-#             columns=[{"name": i, "id": i} for i in df.columns],
-#             data=df.to_dict("rows"),
-#             sort_action="native",
-#             sort_mode='single'
-#         )
-#         arr.append(table_preview)
-#     return arr
-
 
 
 # # =============================
