@@ -12,9 +12,37 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 
-from .layouts import *
 from .layouts.base import html_layout
 from .layouts.navbar import navbar
+from .layouts.indicator import indicators
+from .layouts.stocks import securities
+
+"""
+Due to application architecture, page vars must currently be defined
+outside of function scope of init_callbacks. Will restructure when I can.
+"""
+
+index_page = html.Div([
+    dcc.Link('Chart economic indicators', href='/analyze/indicators'),
+    html.Br(),
+    dcc.Link('Chart securities', href='/analyze/securities'),
+    html.Br(),
+    html.P('or,'),
+    html.Br(),
+    dcc.Link('Go here for help', href='/analyze/help'),
+])
+
+indicators_page = html.Div([
+    indicators,        
+])
+
+securities_page = html.Div([
+    securities,
+])
+
+help_page = html.Div([
+    html.H1('No time. Help yourself.'),
+])
 
 
 def Add_Dash(server):
@@ -64,29 +92,6 @@ def Add_Dash(server):
         html.Div(id='page-content')
     ])
 
-
-    index_page = html.Div([
-        dcc.Link('Chart economic indicators', href='/indicators'),
-        html.Br(),
-        dcc.Link('Chart securities', href='/securities'),
-        html.Br(),
-        dcc.P('or,'),
-        html.Br(),
-        dcc.Link('Go here for help', href='/help'),
-    ])
-
-
-    indicators_layout = html.Div([
-        html.H1('Major Economic Indicators'),
-    ])
-
-
-
-    securities_layout = html.Div([
-        html.H1('Stocks & Bonds'),
-    ])
-
-
     # Launch Application
     return dash_app.server
 
@@ -109,18 +114,29 @@ def init_callbacks(dash_app):
         Args: pathname passed from href link objects
         Returns: Page render that correlates to respective arg parameter
         """
-        if pathname == '/indicators':
-            return indicators
-        elif pathname == '/securities':
-            return securities
-        elif pathname == '/help':
-            return help
+        if pathname == '/analyze/indicators':
+            return indicators_page
+        elif pathname == '/analyze/securities':
+            return securities_page
+        elif pathname == '/analyze/help':
+            return help_page
         else:
             return index_page
 
             # return html.Div([
             #     html.h1('404 - PAGE NOT FOUND')
             # ])
+
+    @dash_app.callback(dash.dependencies.Output('page-1-content', 'children'),
+                [dash.dependencies.Input('page-1-dropdown', 'value')])
+    def page_1_dropdown(value):
+        return 'You have selected "{}"'.format(value)
+
+    
+    @dash_app.callback(dash.dependencies.Output('page-2-content', 'children'),
+              [dash.dependencies.Input('page-2-radios', 'value')])
+    def page_2_radios(value):
+        return 'You have selected "{}"'.format(value) 
 
 
     # Pertains to navbar collapse on small viewports
