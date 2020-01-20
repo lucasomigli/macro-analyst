@@ -1,7 +1,5 @@
 # 📈 Macro-Analyst 
 
-https://dash.plot.ly/integrating-dash
-
 ## ❗️❗️ **@Luca** Proposed changes to directory are discussed below:
 Future changes will be committed solely to changelog.md and appended to each PR
 ```md

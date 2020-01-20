@@ -24,7 +24,7 @@ def Add_Dash(server):
     Everything below '/dashboard/' is served by Dash.
     Everything above it is served up with Flask.
     """
-    external_stylesheets = [dbc.themes.BOOTSTRAP,
+    external_stylesheets = [dbc.themes.LUX,
                             'https://fonts.googleapis.com/css?family=Lato',
                             'https://use.fontawesome.com/releases/v5.8.1/css/all.css']
     external_scripts = ['/static/js/main.js']
@@ -36,7 +36,19 @@ def Add_Dash(server):
                     routes_pathname_prefix='/dashboard/')
 
     # =============================
-    #  Variable Declarations
+    #  Dash app Config
+    # =============================
+
+    # Config
+    dash_app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
+        os.path.join(os.path.abspath(os.path.dirname(__file__)), 'db.sqlite')
+    dash_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+    # Silence exception to elements not existing until callback execution
+    dash_app.config.suppress_callback_exceptions = True
+
+    # =============================
+    #  Front-End Var Declarations
     # =============================
     
     # Override the underlying HTML template
@@ -46,9 +58,15 @@ def Add_Dash(server):
 
     search_bar = dbc.Row(
         [
+            html.A(
+                html.H2('Link'),
+                href="/"
+            ),
+            dbc.Col(dbc.NavLink("Page 1", href="/")),
+            dbc.Col(dbc.NavLink("Page 1", href="/")),
             dbc.Col(dbc.Input(type="search", placeholder="Search")),
             dbc.Col(
-                dbc.Button("Search", color="secondary", className="ml-2"),
+                dbc.Button("Search", color="secondary"),
                 width="auto",
             ),
         ],
@@ -84,35 +102,87 @@ def Add_Dash(server):
                 [
                     dbc.Col(
                         [
-                            html.H2("Heading"),
-                            html.P(
-                                """\
-                                Donec id elit non mi porta gravida at eget metus.
-                                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-                                nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-                                malesuada magna mollis euismod. Donec sed odio dui. Donec id elit non
-                                mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-                                commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-                                amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed
-                                odio dui."""
-                            ),
-                            dbc.Button("View details", color="secondary"),
+                            html.H2("Filters"),
+                            dbc.Form([
+                                dbc.FormGroup(
+                                    [
+                                        dbc.Label("Country", html_for="country"),
+                                        dcc.Dropdown(
+                                            id="country",
+                                            options=[
+                                                {"label": "Option 1", "value": 1},
+                                                {"label": "Option 2", "value": 2},
+                                            ],
+                                        ),
+                                        dbc.Label("Indicator", html_for="indicator"),
+                                        dcc.Dropdown(
+                                            id="indicator",
+                                            options=[
+                                                {"label": "Gross Domestic Product", "value": 1},
+                                                {"label": "Manufacturing Activity", "value": 2},
+                                                {"label": "Inventory Levels", "value": 3},
+                                                {"label": "Retail Sales", "value": 4},
+                                                {"label": "Building Permits", "value": 5},
+                                                {"label": "Housing Market", "value": 6},
+                                                {"label": "New Businesses", "value": 7},
+                                                {"label": "Income & Wages", "value": 8},
+                                                {"label": "Unemployment Rate", "value": 9},
+                                                {"label": "Consumer Price Index | Inflation", "value": 10},
+                                                {"label": "Currency Strength", "value": 11},
+                                                {"label": "Inventory Levels", "value": 12},
+                                                {"label": "Interest Rates", "value": 13},
+                                                {"label": "Corporate Profits", "value": 14},
+                                                {"label": "Balance of Trade", "value": 15},
+                                                {"label": "Value of Commodity Substitutes to USD", "value": 16},
+                                            ],
+                                        )
+                                    ],
+                                    className="mt-4"
+                                )
+                            ])       
                         ],
-                        md=4,
+                        lg=4,
                     ),
+                    html.Hr(className="my-2"),
                     dbc.Col(
                         [
-                            html.H2("Graph"),
+                            html.H2("Economic Data"),
                             dcc.Graph(
-                                figure={"data": [{"x": [1, 2, 3], "y": [1, 4, 9]}]}
+                                figure={"data": [{
+                                    "x": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], 
+                                    "y": [1, 4, 9, 11, 26, 24, 25, 32, 45, 67, 110, 112, 134, 123, 127, 113, 120, 135]}
+                                ]}
+                            ),
+                            dbc.FormGroup(
+                                [
+                                    dbc.Label("RangeSlider", html_for="range-slider"),
+                                    dcc.RangeSlider(id="range-slider", min=0, max=1000, value=[400, 700]),
+                                ]
                             ),
                         ]
                     ),
+                ]
+            ),
+            html.Hr(className="my-2"),
+            dbc.Row(
+                [
+                    dbc.Col(
+                        [
+                            html.H2("Heading"),
+                            html.P(
+                                """This is sample text"""
+                            ),
+                        ]
+                    )
                 ]
             )
         ],
         className="mt-4",
     )
+
+
+
+
     dash_app.layout = html.Div([navbar, body])
 
     # Initialize callbacks after the application is loaded
@@ -123,7 +193,6 @@ def Add_Dash(server):
 
 
 def init_callbacks(dash_app):
-
     @dash_app.callback(
         Output("navbar-collapse", "is_open"),
         [Input("navbar-toggler", "n_clicks")],
@@ -134,6 +203,8 @@ def init_callbacks(dash_app):
         if n:
             return not is_open
         return is_open
+    
+    @dash_app.callback
 
 #    def get_datasets():
 #     """Return previews of all CSVs saved in /data directory."""

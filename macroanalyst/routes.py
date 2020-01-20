@@ -21,10 +21,6 @@ def home():
     """ Landing Page """
     return render_template('index.html')
 
-# @main_bp.route("/")
-# def index():
-#     return render_template('home.html')
-
 # @app.route('/main')
 # def main():
 #     return render_template('main.html')
