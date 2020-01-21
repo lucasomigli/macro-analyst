@@ -1,7 +1,6 @@
 # 📈 Macro-Analyst 
 
-## ❗️❗️ **@Luca** Proposed changes to directory are discussed below:
-Future changes will be committed solely to changelog.md and appended to each PR
+## ❗️❗️ **@Luca: Proposed changes** to directory are discussed below:
 ```md
 ├── 📂data
 │   ├── countries
@@ -39,26 +38,13 @@ Future changes will be committed solely to changelog.md and appended to each PR
 ├── start.sh ──────────────> [script for launching on eventual deployment]
 └── wsgi.py ───────────────> [run.py in another life. wsgi by convention]
 ```
-## ❗️❗️ **@Luca** Changelog and Reasoning
+## ❗️❗️ **@Luca** Changelog & Rationale
 
-Core application logic can be found in directory `/application`.
+Core Flask application logic can be found in `__init__.py` under directory `/macroanalyst`. Within that directory is a sub-directory called `/dash_app`, which is a separate module containing logic for the Dash application.
 
-Within that directory is a sub-directory called `/dash_app`, which is a separate module containing logic for the Dash application.
-This structure seems most logical given that the Dash application is contained within Flask.
+As you can tell, I did quite a bit of refactoring. I kept reading online that people had been struggling with extending Dash in order to make larger, more complex applications. My understanding is that Dash reserves the `app` namespace, creating inside of it a sandbox that crowds out any functionality unrelated to a their framework. This is a problem if we wish extend the application using authentication, mail services or any number of Flask addons.
 
-## Routes.py
-
-Because the entry point to the application now comes through Flask, `routes.py` has the flexibility to serve up anything we want.
-
-As you can tell, I did quite a bit of refactoring. Because Dash extends Flask, every time you make a Dash app (which we want--particularly for SPA functionality) you're creating a new Flask app. Plotly is a for-profit company so they restrict the `app` namespace through Dash. This has the effect of creating a sandbox inside of which you are restricted unless you've paid for their enterprise version. I hope you can see why this might be an issue. If we wanted to implement:
-- Authentication
-- Mail functionality
-- Custom static assets
-
-Essentially, what I've done, after relying heavily on the [following article](https://hackersandslackers.com/plotly-dash-with-flask/), is instantiate Dash inside of the existing Flask server instance and only calling on it when the route is requested (which is '0.0.0.0/dashboard' in this instance but can be changed arbitrarily. See `dash_app/dashboard.py`, line 34). This gives Dash control to all sub-domains under dashboard and allows Flask to control everything else through otherwise standard means.
-
-In this way, if we ever want to extend the application in ways that Plotly/Dash prohibits outside of their enterprise version, we can do so without restriction. For instance, incorporating user models and login/logout functionality.
-
+Currently, Dash is instantiated inside of the existing Flask server and only launches when its route ('127.0.0.1/analyze') is requested, thereby launching a SPA whose routes can be changed arbitrarily. See `dash_app/dashboard.py`, line 60. This gives Dash control of all sub-domains under `analyze`. In this way, if we ever want to extend the application in ways that Plotly/Dash prohibits outside of their enterprise version, we can do so without restriction.
 
 ## About
 
