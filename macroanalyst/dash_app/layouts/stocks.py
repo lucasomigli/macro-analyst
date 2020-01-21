@@ -48,6 +48,7 @@ securities = dbc.Container(
                 html.Hr(className="my-2"),
                 dbc.Col(
                     [   
+                        html.H2("S&P500 Closing Price (USD)"),
                         dcc.Graph(
                             id='securities-graph',
                             figure = fig

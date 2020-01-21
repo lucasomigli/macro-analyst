@@ -75,19 +75,6 @@ indicators = dbc.Container(
                     ]
                 ),
             ]
-        ),
-        html.Hr(className="my-2"),
-        dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        html.H2("Heading"),
-                        html.P(
-                            """This is sample text"""
-                        ),
-                    ]
-                )
-            ]
         )
     ],
     className="mt-4",

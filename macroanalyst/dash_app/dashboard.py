@@ -13,9 +13,11 @@ import dash_html_components as html
 import pandas as pd
 
 from .layouts.base import html_layout
+from .layouts.index import index
 from .layouts.navbar import navbar
 from .layouts.indicator import indicators
 from .layouts.stocks import securities
+
 
 """
 Due to application architecture, page vars must currently be defined
@@ -23,13 +25,7 @@ outside of function scope of init_callbacks. Will restructure when I can.
 """
 
 index_page = html.Div([
-    dcc.Link('Chart economic indicators', href='/analyze/indicators'),
-    html.Br(),
-    dcc.Link('Chart securities', href='/analyze/securities'),
-    html.Br(),
-    html.P('or,'),
-    html.Br(),
-    dcc.Link('Go here for help', href='/help'),
+    index,
 ])
 
 indicators_page = html.Div([
@@ -38,10 +34,6 @@ indicators_page = html.Div([
 
 securities_page = html.Div([
     securities,
-])
-
-help_page = html.Div([
-    html.H1('No time. Help yourself.'),
 ])
 
 
@@ -118,8 +110,6 @@ def init_callbacks(dash_app):
             return indicators_page
         elif pathname == '/analyze/securities':
             return securities_page
-        elif pathname == '/help':
-            return help_page
         else:
             return index_page
 
