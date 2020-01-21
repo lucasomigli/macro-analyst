@@ -1,5 +1,53 @@
-# --- Macro-Analyst ---
----------------
+# 📈 Macro-Analyst 
+
+launch with `python wsgi.py`
+
+## ❗️❗️ **@Luca: Proposed changes** to directory are discussed below:
+```md
+├── 📂data
+│   ├── countries
+│   ├── data.md
+│   └── sp500.csv
+├── 📂macroanalyst
+│   ├── 📂dash_app
+│   │   ├── dashboard.py ───────────> [primary dash_app logic]
+│   │   └── 📂layouts ─────────────> [one of each file is invoked for every page view]
+│   │   │   ├── base.py
+│   │   │   ├── index.py ───────────> [SPA landing page]
+│   │   │   ├── indicator.py ───────> [plotly charting with callbacks to APIs]
+│   │   │   ├── navbar.py ──────────> [invoked for each page]
+│   │   │   ├── page_not_found.py ──> [future 404 template]
+│   │   │   └── stocks.py ──────────> [plotly charting with callbacks to APIs]
+│   ├── 📂static
+│   │   ├── 📂css
+│   │   │   └── master.css
+│   │   ├── 📂img
+│   │   │   └── bg-masthead.jpg
+│   │   ├── 📂js
+│   │   │   └── creative.min.js
+│   │   ├── 📂scss
+│   │   └── 📂vendor
+│   ├── 📂templates
+│   │   └── index.html ────> [landing page template]
+│   ├── __init__.py ───────> [primary flask_app logic]
+│   ├── charts.py ─────────> [held over from initial clone; will incorporate]
+│   ├── models.py
+│   └── routes.py ─────────> [refactored for separation of concerns]
+├── changelog.md
+├── config.py ─────────────> [primary config for flask_app logic]
+├── README.md
+├── requirements.txt
+├── start.sh ──────────────> [script for launching on eventual deployment]
+└── wsgi.py ───────────────> [run.py in another life. wsgi by convention]
+```
+## ❗️❗️ **@Luca** Changelog & Rationale
+
+Core Flask application logic can be found in `__init__.py` under directory `/macroanalyst`. Within that directory is a sub-directory called `/dash_app`, which is a separate module containing logic for the Dash application.
+
+As you can tell, I did quite a bit of refactoring. I kept reading online that people had been struggling with extending Dash in order to make larger, more complex applications. My understanding is that Dash reserves the `app` namespace, creating inside of it a sandbox that crowds out any functionality unrelated to a their framework. This is a problem if we wish extend the application using authentication, mail services or any number of Flask addons.
+
+Currently, Dash is instantiated inside of the existing Flask server and only launches when its route ('127.0.0.1/analyze') is requested, thereby launching a SPA whose routes can be changed arbitrarily. See `dash_app/dashboard.py`, line 60. This gives Dash control of all sub-domains under `analyze`. In this way, if we ever want to extend the application in ways that Plotly/Dash prohibits outside of their enterprise version, we can do so without restriction.
+
 ## About
 
 This project was born as a series of attempts of combining together macro economical indicators and data coming from different sources in Google Sheets. Later on, this converted into the decision of building an easily accessible and free-to-use web-app. The idea is to put together an analyser that could help traders, economists and other people to have a better understanding of macro economical activity in specific countries. This way, people could benefit in both their trading and understanding of changes in business cycles. 
@@ -51,7 +99,7 @@ To add:
 - All charts responding to time-frame resizing.  
 - Add Histogram for graphing historical changes with normal distribution. 
 
-## Developers
+## 🌍 Developers
 People currently involved in the project:
 - Keagan https://github.com/KeaganM
 - Espoir https://github.com/espoirMur
