@@ -10,7 +10,7 @@ from fredapi import Fred
 import plotly.graph_objects as go
 import pandas as pd
 
-sp500 = pd.read_csv(r'C:\dev\macro-analyst\data\sp500.csv')
+sp500 = pd.read_csv(r'data/sp500.csv')
 sp500.drop(['Settle', 'Change', 'Volume', 'Previous Day Open Interest'], axis=1, inplace=True)
 
 fig = go.Figure()

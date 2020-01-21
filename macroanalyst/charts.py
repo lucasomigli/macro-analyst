@@ -3,7 +3,8 @@ import pandas as pd
 import numpy as np
 
 df = pd.read_csv(
-    'https://www.quandl.com/api/v3/datasets/RBA/G01.csv?api_key=VisDzHjR9F8hyHG35baj')
+    'https://www.quandl.com/api/v3/datasets/RBA/G01.csv?api_key=VisDzHjR9F8hyHG35baj'
+)
 
 main_chart_stats = dict()
 side_chart_stats = dict()
@@ -26,35 +27,32 @@ def set_stats(indicator_name, column):
     if 'sma' not in df and len(df.columns) > 1:
         set_stats(df.columns[1])
 
-        main_chart_stats = dict(
-            mean=df['sma'].mean(),
-            standard_error=df['sma'].sem(),
-            median=df['sma'].median(),
-            mode=df['sma'].mode(),
-            standard_deviation=df['sma'].std(),
-            sample_variance=df['sma'].var(),
-            kurtosis=df['sma'].kurtosis(),
-            skewness=df['sma'].skew(),
-            range=df['sma'].max()-df['sma'].min(),
-            minimum=df['sma'].min(),
-            maximum=df['sma'].max(),
-            sum=df['sma'].sum()
-        )
+        main_chart_stats = dict(mean=df['sma'].mean(),
+                                standard_error=df['sma'].sem(),
+                                median=df['sma'].median(),
+                                mode=df['sma'].mode(),
+                                standard_deviation=df['sma'].std(),
+                                sample_variance=df['sma'].var(),
+                                kurtosis=df['sma'].kurtosis(),
+                                skewness=df['sma'].skew(),
+                                range=df['sma'].max() - df['sma'].min(),
+                                minimum=df['sma'].min(),
+                                maximum=df['sma'].max(),
+                                sum=df['sma'].sum())
 
-        side_chart_stats = dict(
-            mean=df['%Change'].mean(),
-            standard_error=df['%Change'].sem(),
-            median=df['%Change'].median(),
-            mode=df['%Change'].mode(),
-            standard_deviation=df['%Change'].std(),
-            sample_variance=df['%Change'].var(),
-            kurtosis=df['%Change'].kurtosis(),
-            skewness=df['%Change'].skew(),
-            range=df['%Change'].max()-df['%Change'].min(),
-            minimum=df['%Change'].min(),
-            maximum=df['%Change'].max(),
-            sum=df['%Change'].sum()
-        )
+        side_chart_stats = dict(mean=df['%Change'].mean(),
+                                standard_error=df['%Change'].sem(),
+                                median=df['%Change'].median(),
+                                mode=df['%Change'].mode(),
+                                standard_deviation=df['%Change'].std(),
+                                sample_variance=df['%Change'].var(),
+                                kurtosis=df['%Change'].kurtosis(),
+                                skewness=df['%Change'].skew(),
+                                range=df['%Change'].max() -
+                                df['%Change'].min(),
+                                minimum=df['%Change'].min(),
+                                maximum=df['%Change'].max(),
+                                sum=df['%Change'].sum())
 
     date = df.iloc[:, 0]
 
@@ -178,7 +176,9 @@ main_layout = {
     "xaxis": {
         "title": "Date",
         "domain": [0, 1],
-        "rangeslider": {"visible": False},
+        "rangeslider": {
+            "visible": False
+        },
         "autorange": True
     },
     "yaxis": {
@@ -208,9 +208,19 @@ side_chart_main_trace = {
     'x': "x",
     'y': "y",
     "yaxis": "y2",
-    "line": {"color": "purple"},
-    "decreasing": {"line": {"color": "red"}},
-    "increasing": {"line": {"color": "green"}}
+    "line": {
+        "color": "purple"
+    },
+    "decreasing": {
+        "line": {
+            "color": "red"
+        }
+    },
+    "increasing": {
+        "line": {
+            "color": "green"
+        }
+    }
 }
 
 side_chart_sma_trace = {
@@ -227,24 +237,24 @@ side_chart_sma_trace = {
     "hoverinfo": "none",
 }
 
-
 traces = set_traces()
 side_traces = set_side_traces()
 
-main_chart = dcc.Graph(
-    id='main_chart',
-    figure=dict(
-        layout=main_layout,
-        data=[main_trace, sma_trace, bbu_trace, bbl_trace],
-    ),
-    config={'displayModeBar': False, "autosizable": True}
-)
+main_chart = dcc.Graph(id='main_chart',
+                       figure=dict(
+                           layout=main_layout,
+                           data=[main_trace, sma_trace, bbu_trace, bbl_trace],
+                       ),
+                       config={
+                           'displayModeBar': False,
+                           "autosizable": True
+                       })
 
-side_chart = dcc.Graph(
-    id='side_chart',
-    figure=dict(
-        layout=main_layout,
-        data=[side_chart_main_trace, side_chart_sma_trace]
-    ),
-    config={'displayModeBar': False, "autosizable": True}
-)
+side_chart = dcc.Graph(id='side_chart',
+                       figure=dict(
+                           layout=main_layout,
+                           data=[side_chart_main_trace, side_chart_sma_trace]),
+                       config={
+                           'displayModeBar': False,
+                           "autosizable": True
+                       })

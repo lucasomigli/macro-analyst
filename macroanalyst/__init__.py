@@ -20,27 +20,21 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 
-"""
-==================================================================
-Note: refer to changelog for some elaboration on proposed changes
-==================================================================
-"""
-
 # =============================
 # Flask app
 # =============================
+
 
 def create_app():
     """
     Constructs the core application
     """
-    app = Flask(__name__,
-                instance_relative_config=False)
+    app = Flask(__name__, instance_relative_config=False)
     app.config.from_object('config.Config')
 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
     os.path.join(os.path.abspath(os.path.dirname(__file__)), 'db.sqlite')
-    
+
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     # Init Database with SQLAlchemy
@@ -61,5 +55,3 @@ def create_app():
         app = Add_Dash(app)
 
         return app
-
-
