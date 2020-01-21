@@ -4,7 +4,7 @@ import dash_html_components as html
 from fredapi import Fred
 
 # ==============================
-#  Securities Charting Template
+#  Equities Charting Template
 # ==============================
 
 import plotly.graph_objects as go
@@ -20,7 +20,7 @@ fig.add_trace(go.Scatter(x=sp500.Date, y=sp500.Last, name="S&P Close", line_colo
 
 fig.update_layout(xaxis_rangeslider_visible=True)
 
-securities = dbc.Container(
+equities = dbc.Container(
     [
         dbc.Row(
             [

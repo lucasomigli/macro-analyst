@@ -16,14 +16,10 @@ from .layouts.base import html_layout
 from .layouts.index import index
 from .layouts.navbar import navbar
 from .layouts.indicator import indicators
-from .layouts.stocks import securities
+from .layouts.equities import equities
 
 
-"""
-Due to application architecture, page vars must currently be defined
-outside of function scope of init_callbacks. Will restructure when I can.
-"""
-
+# Page layouts defined in global scope
 index_page = html.Div([
     index,
 ])
@@ -32,10 +28,9 @@ indicators_page = html.Div([
     indicators,        
 ])
 
-securities_page = html.Div([
-    securities,
+equities_page = html.Div([
+    equities,
 ])
-
 
 def Add_Dash(server):
     """
@@ -87,7 +82,6 @@ def Add_Dash(server):
     # Launch Application
     return dash_app.server
 
-
 # =============================
 #  Callbacks
 # =============================
@@ -108,19 +102,10 @@ def init_callbacks(dash_app):
         """
         if pathname == '/analyze/indicators':
             return indicators_page
-        elif pathname == '/analyze/securities':
-            return securities_page
+        elif pathname == '/analyze/equities':
+            return equities_page
         else:
             return index_page
-
-    # Indicators Callback
-    # @dash_app.callback(dash.dependencies.Output('indicators', 'children'),
-    #             [dash.dependencies.Input('page-1-dropdown', 'value')])
-
-    # # Securities Callback
-    # @dash_app.callback(dash.dependencies.Output('securities', 'children'),
-    #           [dash.dependencies.Input('page-2-radios', 'value')])
-
 
     # Pertains to navbar collapse on small viewports
     @dash_app.callback(
@@ -133,8 +118,10 @@ def init_callbacks(dash_app):
         if n:
             return not is_open
         return is_open
-    
 
+"""
+TODO fold the following logic into existing page views
+"""
 
 # # =============================
 # # Dash app

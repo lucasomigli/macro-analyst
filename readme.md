@@ -1,5 +1,7 @@
 # 📈 Macro-Analyst 
 
+launch with `python wsgi.py`
+
 ## ❗️❗️ **@Luca: Proposed changes** to directory are discussed below:
 ```md
 ├── 📂data

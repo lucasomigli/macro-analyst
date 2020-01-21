@@ -25,7 +25,7 @@ nav_links = dbc.Row(
         dbc.DropdownMenu(
             [
                 dbc.DropdownMenuItem(
-                    dbc.Col(dcc.Link('Equities', href='/analyze/securities', style=dropdown_style)),                    
+                    dbc.Col(dcc.Link('Equities', href='/analyze/equities', style=dropdown_style)),                    
                 ),
                 dbc.DropdownMenuItem(
                     dbc.Col(dcc.Link('Fixed Income', href='/analyze/fixed_income', style=dropdown_style)),
