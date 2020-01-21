@@ -9,8 +9,14 @@ Future changes will be committed solely to changelog.md and appended to each PR
 │   └── sp500.csv
 ├── 📂macroanalyst
 │   ├── 📂dash_app
-│   │   ├── dashboard.py ──> [primary dash_app logic]
-│   │   └── layout.py ──> [primary dash_app logic]
+│   │   ├── dashboard.py ───────────> [primary dash_app logic]
+│   │   └── 📂layouts ─────────────> [one of each file is invoked for every page view]
+│   │   │   ├── base.py
+│   │   │   ├── index.py ───────────> [SPA landing page]
+│   │   │   ├── indicator.py ───────> [plotly charting with callbacks to APIs]
+│   │   │   ├── navbar.py ──────────> [invoked for each page]
+│   │   │   ├── page_not_found.py ──> [future 404 template]
+│   │   │   └── stocks.py ──────────> [plotly charting with callbacks to APIs]
 │   ├── 📂static
 │   │   ├── 📂css
 │   │   │   └── master.css
@@ -21,17 +27,17 @@ Future changes will be committed solely to changelog.md and appended to each PR
 │   │   ├── 📂scss
 │   │   └── 📂vendor
 │   ├── 📂templates
-│   │   └── index.html ──> [landing page template]
-│   ├── __init__.py ──> [primary flask_app logic]
-│   ├── forms.py
+│   │   └── index.html ────> [landing page template]
+│   ├── __init__.py ───────> [primary flask_app logic]
+│   ├── charts.py ─────────> [held over from initial clone; will incorporate]
 │   ├── models.py
-│   └── routes.py ──> [refactored for separation of concerns]
+│   └── routes.py ─────────> [refactored for separation of concerns]
 ├── changelog.md
-├── config.py ──> [primary config for flask_app logic]
+├── config.py ─────────────> [primary config for flask_app logic]
 ├── README.md
 ├── requirements.txt
-├── start.sh ──> [script for launching on eventual deployment]
-└── wsgi.py ──> [run.py in another life. wsgi is simply a 'calling convention']
+├── start.sh ──────────────> [script for launching on eventual deployment]
+└── wsgi.py ───────────────> [run.py in another life. wsgi by convention]
 ```
 ## ❗️❗️ **@Luca** Changelog and Reasoning
 
