@@ -29,7 +29,7 @@ index_page = html.Div([
     html.Br(),
     html.P('or,'),
     html.Br(),
-    dcc.Link('Go here for help', href='/analyze/help'),
+    dcc.Link('Go here for help', href='/help'),
 ])
 
 indicators_page = html.Div([
@@ -118,25 +118,18 @@ def init_callbacks(dash_app):
             return indicators_page
         elif pathname == '/analyze/securities':
             return securities_page
-        elif pathname == '/analyze/help':
+        elif pathname == '/help':
             return help_page
         else:
             return index_page
 
-            # return html.Div([
-            #     html.h1('404 - PAGE NOT FOUND')
-            # ])
+    # Indicators Callback
+    # @dash_app.callback(dash.dependencies.Output('indicators', 'children'),
+    #             [dash.dependencies.Input('page-1-dropdown', 'value')])
 
-    @dash_app.callback(dash.dependencies.Output('page-1-content', 'children'),
-                [dash.dependencies.Input('page-1-dropdown', 'value')])
-    def page_1_dropdown(value):
-        return 'You have selected "{}"'.format(value)
-
-    
-    @dash_app.callback(dash.dependencies.Output('page-2-content', 'children'),
-              [dash.dependencies.Input('page-2-radios', 'value')])
-    def page_2_radios(value):
-        return 'You have selected "{}"'.format(value) 
+    # # Securities Callback
+    # @dash_app.callback(dash.dependencies.Output('securities', 'children'),
+    #           [dash.dependencies.Input('page-2-radios', 'value')])
 
 
     # Pertains to navbar collapse on small viewports

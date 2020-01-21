@@ -7,8 +7,8 @@ PLOTLY_LOGO = "https://images.plot.ly/logo/new-branding/plotly-logomark.png"
 
 search_bar = dbc.Row(
         [
-            dbc.Col(dcc.Link('Econ', href='/indicators')),
-            dbc.Col(dcc.Link('Stocks', href='/securities')),
+            dbc.Col(dcc.Link('Econ', href='/analyze/indicators')),
+            dbc.Col(dcc.Link('Stocks', href='/analyze/securities')),
             dbc.Col(dcc.Link('Help', href='/help')),
             # dbc.Col(dbc.Input(type="search", placeholder="Search")),
             # dbc.Col(
