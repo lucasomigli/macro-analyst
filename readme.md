@@ -90,19 +90,29 @@ Ideal data structure for charting:
 - Total Labor Force
 - COT Report
 
+### BOP:
+These will need to be graphed on the same chart. Giving also a chance to download the original BOP source files. 
+- Current Account Balance
+- Capital Account Balance
+- Net Errors And Omissions
+
 ### Government Finance:
-- Government Revenue/Spending and Liquidity Ratio
-- BOP
+- Debt To GDP Ratio
+- Government Revenue
+- Government Spending
+- Interest Bill / GDP
+- Liquidity Ratio and % Change
 
 ### Central Bank Finance:
-- Central Bank Balance Sheet
+- Central Bank Balance Sheet (Quarterly)
+- (Calculated) CBBS / GDP
 
 ### Trades Data:
 - Trades Imports
 - Trades Exports
 
 ### Securities
-- Government Bonds
+- Government Bonds (2Y, 5Y, 10Y, 20Y)
 - Stock Market Index
 - Commodities
 
