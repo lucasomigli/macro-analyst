@@ -2,7 +2,7 @@
 
 launch with `python wsgi.py`
 
-## Directory structure of the Flask/Dash application:
+## Directory Structure:
 ```md
 ├── 📂data
 │   ├── countries
