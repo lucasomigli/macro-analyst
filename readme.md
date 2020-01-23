@@ -2,7 +2,7 @@
 
 launch with `python wsgi.py`
 
-## ❗️❗️ **@Luca: Proposed changes** to directory are discussed below:
+## Directory structure of the Flask/Dash application:
 ```md
 ├── 📂data
 │   ├── countries
@@ -40,7 +40,7 @@ launch with `python wsgi.py`
 ├── start.sh ──────────────> [script for launching on eventual deployment]
 └── wsgi.py ───────────────> [run.py in another life. wsgi by convention]
 ```
-## ❗️❗️ **@Luca** Changelog & Rationale
+## Changelog & Rationale
 
 Core Flask application logic can be found in `__init__.py` under directory `/macroanalyst`. Within that directory is a sub-directory called `/dash_app`, which is a separate module containing logic for the Dash application.
 
