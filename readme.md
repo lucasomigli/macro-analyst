@@ -77,6 +77,35 @@ Most of data is coming from:
 
 Where missing, some data is scraped from investing.com that provides a download section for getting historical data. 
 
+
+Ideal data structure for charting:
+### Indicators:
+- GDP Growth
+- PMI/NMI
+- Consumer Sentiment/Confidence Index 
+- Building Permits
+- M2 Money Supply
+- Interest Rates
+- CPI/PPI
+- Total Labor Force
+- COT Report
+
+### Government Finance:
+- Government Revenue/Spending and Liquidity Ratio
+- BOP
+
+### Central Bank Finance:
+- Central Bank Balance Sheet
+
+### Trades Data:
+- Trades Imports
+- Trades Exports
+
+### Securities
+- Government Bonds
+- Stock Market Index
+- Commodities
+
 ## What to work on
 As for now, I do have data for these countries: Australia, United States, Europe, Great Britain, Canada, Switzerland, China, Japan, Norway, New Zealand, Russia, Sweden, South Africa. The idea is obviously to expand to more in the future. 
 Generally speaking, main concepts to work on are:
@@ -87,10 +116,11 @@ Generally speaking, main concepts to work on are:
 - Selection of countries from top menu.
 - <Addons!> Scorecarding system to identify business cycle. Choice of Recession, High Recession, Recovery, Inflation, Hyper-Inflation. <Addons!>
 
-Libraries we will be using:
-- Django for the web app itself.
-- Pandas for reading csv/xlsx, creating graphs and performing descriptive statistics
-- Matplotplib for charting data and adding momentum indicatots (Bollinger bands, MACD, Stochastic RSI, RSI, Moving Average, Volume etc..)
+Libraries used:
+- flask
+- dash/plotly
+- pandas
+- SQLAlchemy
 
 Charting with Dash.
 To add:
