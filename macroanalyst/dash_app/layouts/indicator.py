@@ -72,12 +72,6 @@ indicators = dbc.Container(
                         dcc.Graph(
                             id="chart1"
                         ),
-                        dbc.FormGroup(
-                            [
-                                dbc.Label("RangeSlider", html_for="range-slider"),
-                                dcc.RangeSlider(id="range-slider", min=0, max=1000, value=[400, 700]),
-                            ]
-                        ),
                     ]
                 ),
             ]

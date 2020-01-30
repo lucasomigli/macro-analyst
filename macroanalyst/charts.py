@@ -113,7 +113,7 @@ main_trace = {
 sma_trace = {
     "line": {
         "color": "#E377C2",
-        "width": 0.5,
+        "width": 1,
         "fillcolor": "rgba(214,39,40,1)"
     },
     "mode": "lines",
@@ -132,7 +132,7 @@ sma_trace = {
 bbu_trace = {
     "line": {
         "color": "#ccc",
-        "width": 0.5,
+        "width": 1,
         "fillcolor": "rgba(255,127,14,1)"
     },
     "mode": "lines",
@@ -154,7 +154,7 @@ bbu_trace = {
 bbl_trace = {
     "line": {
         "color": "#ccc",
-        "width": 0.5,
+        "width": 1,
         "fillcolor": "rgba(44,160,44,1)"
     },
     "mode": "lines",
@@ -177,12 +177,11 @@ main_layout = {
         "title": "Date",
         "domain": [0, 1],
         "rangeslider": {
-            "visible": False
+            "visible": True
         },
         "autorange": True
     },
     "yaxis": {
-        "domain": [0, 1],
         "showticklabels": False,
         "autorange": True
     },
@@ -231,7 +230,7 @@ side_chart_sma_trace = {
     "yaxis": "y2",
     "line": {
         "color": "lightpurple",
-        "width": 0.5,
+        "width": 1,
         "fillcolor": "rgba(44,160,44,1)"
     },
     "hoverinfo": "none",

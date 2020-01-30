@@ -222,8 +222,6 @@ def init_callbacks(dash_app):
             }
 
             dataframe = pd.DataFrame(frame)
-
-            print(dataframe)
             """
             Format for OHLC chart
             """
@@ -238,7 +236,6 @@ def init_callbacks(dash_app):
         if len(dataframe.columns) > 1:
             charts.df = dataframe
 
-            print(charts.df.dtypes)
             charts.set_stats(chart.indicator, charts.df.columns[1])
 
         if chart_type == "Candlesticks" and ("Low" or "High" or "Open"
