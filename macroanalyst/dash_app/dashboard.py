@@ -11,7 +11,9 @@ import dash_bootstrap_components as dbc
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
+import numpy as np
 from fredapi import Fred
+from pyscbwrapper import SCB
 import json
 import requests
 import io
@@ -163,13 +165,68 @@ def init_callbacks(dash_app):
         with open('macroanalyst/keys.json', 'r+') as f:
             api_keys = json.load(f)
 
+        # St Louis FRED API
         if 'stlouis' in chart.source:
             key = api_keys['fred']
 
             series_id = re.search('series_id=(.*)&ap', chart.source).group(1)
             fred = Fred(api_key=key)
 
-            dataframe = pd.DataFrame(fred.get_series(series_id))
+            dataframe = pd.DataFrame(fred.get_series(series_id),
+                                     columns=['Value'])
+            dataframe['Date'] = dataframe.index
+
+            frame = {'Date': dataframe['Date'], 'Value': dataframe['Value']}
+
+            dataframe = pd.DataFrame(data=frame)
+
+        # European Central Bank API
+        elif 'ecb' in chart.source:
+            link = str(chart.source)
+            response = requests.get(link, headers={'Accept': 'text/csv'})
+
+            dataframe = pd.read_csv(
+                io.StringIO(response.content.decode('utf-8'))).filter(
+                    ['TIME_PERIOD', 'OBS_VALUE'], axis=1)
+
+        # Sweden SCB API
+        elif 'scb.se' in chart.source:
+            scb = SCB('en')
+            scb.go_down('en', 'BE', 'BE0401', 'BE0401B')
+
+            scb_data = scb.get_data()
+            """
+            Translate json into dataframe
+            """
+
+        # Russian iss.moex API
+        elif 'iss.moex' in chart.source:
+            link = str(chart.source)
+            r = requests.get(link)
+            df = pd.read_csv(io.StringIO(r.content.decode('utf-8')),
+                             sep=';',
+                             names=[
+                                 'Open', 'Close', 'High', 'Low', 'Value',
+                                 'Volume', 'Date', 'End'
+                             ]).iloc[2:]
+
+            frame = {
+                'Date': df['Date'].astype(np.datetime64),
+                'Open': df['Open'].astype('float64'),
+                'Close': df['Close'].astype('float64'),
+                'High': df['High'].astype('float64'),
+                'Low': df['Low'].astype('float64'),
+                'Value': df['Value'].astype('float64'),
+                'Volume': df['Volume'].astype('float64'),
+                'End': df['End'].astype(np.datetime64)
+            }
+
+            dataframe = pd.DataFrame(frame)
+
+            print(dataframe)
+            """
+            Format for OHLC chart
+            """
 
         else:
             key = api_keys['quandl']
@@ -180,10 +237,12 @@ def init_callbacks(dash_app):
 
         if len(dataframe.columns) > 1:
             charts.df = dataframe
+
+            print(charts.df.dtypes)
             charts.set_stats(chart.indicator, charts.df.columns[1])
 
         if chart_type == "Candlesticks" and ("Low" or "High" or "Open"
-                                             or "Last") in charts.df:
+                                             or "Close") in charts.df:
 
             charts.main_trace['type'] = "candlestick"
             charts.main_trace['fill'] = "none"
@@ -192,7 +251,7 @@ def init_callbacks(dash_app):
                 "low": charts.df['Low'],
                 "high": charts.df['High'],
                 "open": charts.df['Open'],
-                "close": charts.df['Last'],
+                "close": charts.df['Close'],
             }
 
             for val in ohlc:

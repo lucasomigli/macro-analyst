@@ -28,6 +28,15 @@ Websites to be scraped (NO API nor direct link available):
 | COT Report   | cftc.gov     | .zip expand to .xls (or get from https://www.quandl.com/data/CFTC/098662_F_L_ALL_OI-Commitment-of-Traders-U-S-DOLLAR-INDEX-ICUS-Futures-Only-Percent-of-Open-Interest-Legacy-Format-098662)  |
 | Building Permits   | census.gov     | .xls file  |
 
+## Australia
+
+| Indicator | Source | Comment |
+| :---         |     :---:      |          ---: |
+| PMI   | Investing.com | Scrape website  |
+| NMI   | Investing.com | Scrape website  |
+| PPI   | https://www.abs.gov.au | .xls file  |
+| BOP | Google Sheets | Google Sheet id: 1N5AEeZboCgbs0eQstf-Bhmid67j-C3EiitUThDD_fSY |
+
 ## Europe
 
 | Indicator | Source | Comment |
@@ -61,7 +70,6 @@ Websites to be scraped (NO API nor direct link available):
 | PMI   | Investing.com | Scrape website  |
 | CSI   | Investing.com | Scrape website  |
 | Bank Balance Sheet   | .bankofcanada.ca | .csv file with different format |
-| PPI   | sdw-wsrest.ecb.europa.eu | Access via RESTful API  |
 | BOP   | statcan.gc.ca | .zip file to .xls to format  |
 
 ## China
@@ -95,7 +103,6 @@ Websites to be scraped (NO API nor direct link available):
 | Indicator | Source | Comment |
 | :---         |     :---:      |          ---: |
 | PMI   | Investing.com | Scrape website  |
-| Building Permits   | sdw.ecb.europa.eu | .xls file  |
 | COT Report | Missing | Google Sheet id: 144GCj8WXvzM0H7xSmyWhE5KbtLPpj0wY5vJdEzyTK2o |
 | Stock Market Index   | Investing.com | Scrape website  |
 
@@ -105,8 +112,7 @@ Websites to be scraped (NO API nor direct link available):
 | :---         |     :---:      |          ---: |
 | PMI   | Investing.com | Scrape website  |
 | PMI Services  | Investing.com | Scrape website  |
-| Building Permits   | sdw.ecb.europa.eu | .xls file  |
-| M2 Money Supply   | api.scb.se     | RESTful API Body request |
+| M2 Money Supply   | api.scb.se     | RESTful API Body request, Translate from json to csv |
 | Central Bank Balace Sheet   | api.scb.se     | RESTful API Body request |
 | BOP   | api.scb.se     | RESTful API Body request |
 
