@@ -2,11 +2,7 @@
 
 launch with `python wsgi.py`
 
-<<<<<<< HEAD
 ## Directory structure:
-=======
-## Directory Structure:
->>>>>>> 5e39a9d4b7f9d03fc6e4873ad8de2d6e3888912f
 ```md
 ├── 📂data
 │   ├── countries
@@ -48,8 +44,6 @@ launch with `python wsgi.py`
 
 Core Flask application logic can be found in `__init__.py` under directory `/macroanalyst`. Within that directory is a sub-directory called `/dash_app`, which is a separate module containing logic for the Dash application.
 
-As you can tell, I did quite a bit of refactoring. I kept reading online that people had been struggling with extending Dash in order to make larger, more complex applications. My understanding is that Dash reserves the `app` namespace, creating inside of it a sandbox that crowds out any functionality unrelated to a their framework. This is a problem if we wish extend the application using authentication, mail services or any number of Flask addons.
-
 Currently, Dash is instantiated inside of the existing Flask server and only launches when its route ('127.0.0.1/analyze') is requested, thereby launching a SPA whose routes can be changed arbitrarily. See `dash_app/dashboard.py`, line 60. This gives Dash control of all sub-domains under `analyze`. In this way, if we ever want to extend the application in ways that Plotly/Dash prohibits outside of their enterprise version, we can do so without restriction.
 
 ## About
@@ -57,7 +51,7 @@ Currently, Dash is instantiated inside of the existing Flask server and only lau
 This project was born as a series of attempts of combining together macro economical indicators and data coming from different sources in Google Sheets. Later on, this converted into the decision of building an easily accessible and free-to-use web-app. The idea is to put together an analyser that could help traders, economists and other people to have a better understanding of macro economical activity in specific countries. This way, people could benefit in both their trading and understanding of changes in business cycles. 
 
 --------------
-Macro-Analyst charts country-specific economic activity downloading data from original sources. Countries selectable have a series of indicators including:
+Macro-Analyst is an all-in-one analyser for macroeconomic data. Select a range of countries and different indicators:
 - GDP
 - Stock Market Index 
 - BOP
@@ -75,12 +69,12 @@ Macro-Analyst charts country-specific economic activity downloading data from or
 - Central Bank Balance Sheet
 
 Most of data is coming from:
-- Quandl.com
+- quandl.com
+- fred.stlouisfed.org
 - db.nomics.world
 - bea.gov
 
-Where missing, some data is scraped from investing.com that provides a download section for getting historical data. 
-
+Where missing, data is scraped from investing.com that provides a download section for selecting historical data. 
 
 Ideal data structure for charting:
 ### Indicators:
@@ -120,28 +114,27 @@ These will need to be graphed on the same chart. Giving also a chance to downloa
 - Stock Market Index
 - Commodities
 
-## What to work on
-As for now, I do have data for these countries: Australia, United States, Europe, Great Britain, Canada, Switzerland, China, Japan, Norway, New Zealand, Russia, Sweden, South Africa. The idea is obviously to expand to more in the future. 
-Generally speaking, main concepts to work on are:
-- Connect to APIs and download automatically and periodically data.
-- Responsive charts that change according to selection on the menu.
-- Descriptice Statistics that perform directly on the underlying data.
-- Selection of different indicators from top menu-bar.
-- Selection of countries from top menu.
-- <Addons!> Scorecarding system to identify business cycle. Choice of Recession, High Recession, Recovery, Inflation, Hyper-Inflation. <Addons!>
+## Issue Log
+- Fix Investing.com links to be scraped and stored in database for quick access.
+- Format .xls and .xlsx to dataframe. Create separate scripts by country.
+- Fix Swedish SCB API to download csv formatted data
+- Add descriptive stats histogram
+- Have Charts divided by kind in tab groups (See above)
+- Fix Bollinger Bands and SMAs not showing correctly 
+- Synronise date ranges slider with % side chart
+- Design and format BOP chart
+- Design and format Central Bank Balance Sheet
+- (Ongoing) Add more countries and data
+
+## Ideas Log
+- Business cycle meter. Scorecoards the level of inflation/deflation currently present in the analysed country
+- Business idea
 
 Libraries used:
-- flask
-- dash/plotly
-- pandas
-- SQLAlchemy
-
-Charting with Dash.
-To add:
-- Fix Momentum Indicators being 'reversed'. SMAs go up until last x days, whereas should be the opposite.
-- Add functionality for hoovering on either charts to have visual response from other one. 
-- All charts responding to time-frame resizing.  
-- Add Histogram for graphing historical changes with normal distribution. 
+- flask 🌶
+- dash/plotly 📊
+- pandas 🐼
+- SQLAlchemy 🧪
 
 ## 🌍 Developers
 People currently involved in the project:

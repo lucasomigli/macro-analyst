@@ -222,9 +222,6 @@ def init_callbacks(dash_app):
             }
 
             dataframe = pd.DataFrame(frame)
-            """
-            Format for OHLC chart
-            """
 
         else:
             key = api_keys['quandl']
@@ -269,8 +266,3 @@ def init_callbacks(dash_app):
             'data': charts.side_traces,
             'layout': charts.main_layout
         }]
-
-
-"""
-TODO fold the following logic into existing page views
-"""
