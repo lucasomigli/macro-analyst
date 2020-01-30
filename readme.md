@@ -2,7 +2,11 @@
 
 launch with `python wsgi.py`
 
+<<<<<<< HEAD
 ## Directory structure:
+=======
+## Directory Structure:
+>>>>>>> 5e39a9d4b7f9d03fc6e4873ad8de2d6e3888912f
 ```md
 ├── 📂data
 │   ├── countries
