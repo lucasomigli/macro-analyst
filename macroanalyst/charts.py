@@ -20,9 +20,9 @@ def set_stats(indicator_name, column):
     df['%Change'] = df[column].pct_change()
     df['sma'] = df[column].rolling(10).mean()
     df['bollinger_bands_upper'] = df[column].rolling(
-        30).mean() + df[column].rolling(30).std() * 2
+        20).mean() + df[column].rolling(20).std() * 2
     df['bollinger_bands_lower'] = df[column].rolling(
-        30).mean() - df[column].rolling(30).std() * 2
+        20).mean() - df[column].rolling(20).std() * 2
 
     if 'sma' not in df and len(df.columns) > 1:
         set_stats(df.columns[1])

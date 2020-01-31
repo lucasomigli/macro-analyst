@@ -124,7 +124,6 @@ Websites to be scraped (NO API nor direct link available):
 | PMI Services  | Investing.com | Scrape website  |
 | BOP   | api.db.nomics     | Create separate chart for specific CSV |
 | Central Bank Balace Sheet   | cbr.ru     | .xlsx file |
-| Stock Market Index   | iss.moex.com | csv file to format  |
 
 ## South Africa
 

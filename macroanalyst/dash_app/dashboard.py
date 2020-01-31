@@ -210,6 +210,8 @@ def init_callbacks(dash_app):
                                  'Volume', 'Date', 'End'
                              ]).iloc[2:]
 
+            df = df.sort_values(by='Date')
+
             frame = {
                 'Date': df['Date'].astype(np.datetime64),
                 'Open': df['Open'].astype('float64'),
@@ -217,8 +219,6 @@ def init_callbacks(dash_app):
                 'High': df['High'].astype('float64'),
                 'Low': df['Low'].astype('float64'),
                 'Value': df['Value'].astype('float64'),
-                'Volume': df['Volume'].astype('float64'),
-                'End': df['End'].astype(np.datetime64)
             }
 
             dataframe = pd.DataFrame(frame)
