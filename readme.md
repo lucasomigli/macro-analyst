@@ -76,7 +76,8 @@ Most of data is coming from:
 
 Where missing, data is scraped from investing.com that provides a download section for selecting historical data. 
 
-Ideal data structure for charting:
+Selectable tabs are available. Once within the new window, users can choose between countries listed and work with a variety of indicators. These are going to be the major selections, divided by type (and therefore related tab).
+
 ### Indicators:
 - GDP Growth
 - PMI/NMI
@@ -88,11 +89,10 @@ Ideal data structure for charting:
 - Total Labor Force
 - COT Report
 
-### BOP:
-These will need to be graphed on the same chart. Giving also a chance to download the original BOP source files. 
-- Current Account Balance
-- Capital Account Balance
-- Net Errors And Omissions
+### Securities
+- Government Bonds (2Y, 5Y, 10Y, 20Y)
+- Stock Market Index
+- Commodities
 
 ### Government Finance:
 - Debt To GDP Ratio
@@ -100,34 +100,33 @@ These will need to be graphed on the same chart. Giving also a chance to downloa
 - Government Spending
 - Interest Bill / GDP
 - Liquidity Ratio and % Change
-
-### Central Bank Finance:
 - Central Bank Balance Sheet (Quarterly)
 - (Calculated) CBBS / GDP
+
+### Balance of Payments:
+These will need to be graphed on the same chart. Giving also a chance to download the original BOP source files. 
+- Current Account Balance
+- Capital Account Balance
+- Net Errors And Omissions
 
 ### Trades Data:
 - Trades Imports
 - Trades Exports
 
-### Securities
-- Government Bonds (2Y, 5Y, 10Y, 20Y)
-- Stock Market Index
-- Commodities
-
 ## Issue Log
 - Fix Investing.com links to be scraped and stored in database for quick access.
 - Format .xls and .xlsx to dataframe. Create separate scripts by country.
-- Fix Swedish SCB API to download csv formatted data
-- Add descriptive stats histogram
-- Have Charts divided by kind in tab groups (See above)
+- Fix Swedish SCB API to download .csv formatted data
+- Add descriptive statistics histogram
+- Divide charts by type in separate tab groups (See above)
 - Fix Bollinger Bands and SMAs not showing correctly 
-- Synronise date ranges slider with % side chart
+- Synronize date range sliders with % change chart
 - Design and format BOP chart
-- Design and format Central Bank Balance Sheet
+- Design and plot Central Bank Balance Sheet
 - (Ongoing) Add more countries and data
 
 ## Ideas Log
-- Business cycle meter. Scorecoards the level of inflation/deflation currently present in the analysed country
+- Business cycle meter. Scorecards the level of inflation/deflation currently present in the analysed country
 - Business idea
 
 Libraries used:
