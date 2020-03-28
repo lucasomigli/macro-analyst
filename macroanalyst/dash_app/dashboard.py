@@ -23,7 +23,10 @@ from .layouts.base import html_layout
 from .layouts.index import index
 from .layouts.navbar import navbar
 from .layouts.indicator import indicators
-from .layouts.equities import equities
+from .layouts.securities import securities
+from .layouts.gov_finance import gov_finance
+from .layouts.bop import bop
+from .layouts.trades import trades
 
 from .. import Indicator, Country
 from .. import charts
@@ -37,8 +40,20 @@ indicators_page = html.Div([
     indicators,
 ])
 
-equities_page = html.Div([
-    equities,
+securities_page = html.Div([
+    securities,
+])
+
+gov_finance_page = html.Div([
+    gov_finance,
+])
+
+bop_page = html.Div([
+    bop,
+])
+
+trades_page = html.Div([
+    trades,
 ])
 
 
@@ -104,8 +119,8 @@ def init_callbacks(dash_app):
     """
     This module contains various callback and nested functions.
     """
-    @dash_app.callback(dash.dependencies.Output('page-content', 'children'),
-                       [dash.dependencies.Input('url', 'pathname')])
+    @dash_app.callback(Output('page-content', 'children'),
+                       [Input('url', 'pathname')])
     def display_page(pathname):
         """
         Essentially serves as the Dash application's routing function
@@ -115,8 +130,14 @@ def init_callbacks(dash_app):
         """
         if pathname == '/analyze/indicators':
             return indicators_page
-        elif pathname == '/analyze/equities':
-            return equities_page
+        elif pathname == '/analyze/securities':
+            return securities_page
+        elif pathname == '/analyze/government-finance':
+            return gov_finance_page
+        elif pathname == '/analyze/bop':
+            return bop_page
+        elif pathname == '/analyze/trades':
+            return trades_page
         else:
             return index_page
 
@@ -136,15 +157,18 @@ def init_callbacks(dash_app):
 
     charts.initialise_charts()
 
-    @dash_app.callback(dash.dependencies.Output('indicator', 'options'),
-                       [dash.dependencies.Input('country', 'value')])
-    def update_indicator_dropdown(country_name):
+    @dash_app.callback(
+        Output('indicator', 'options'),
+        [Input('country', 'value'),
+         Input('intermediate-value', 'children')])
+    def update_indicator_dropdown(country_name, indicator_type):
         return [{
             'label': item.code,
             'value': item.code
         } for item in Indicator.query.filter_by(
-            country_id=Country.query.filter_by(
-                country=country_name).first().id).all()]
+            indicator_type=indicator_type).filter_by(
+                country_id=Country.query.filter_by(
+                    country=country_name).first().id).all()]
 
     @dash_app.callback(
         [Output('chart1', 'figure'),

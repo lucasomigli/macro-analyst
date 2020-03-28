@@ -7,7 +7,7 @@ PLOTLY_LOGO = "https://images.plot.ly/logo/new-branding/plotly-logomark.png"
 
 link_style = {
     'font-weight': 'bold',
-    'font-size': '1.5em',
+    'font-size': '1.2em',
     'color': 'white',
     'font-color': 'white',
     'margin': '0em 0.5em 0em',
@@ -16,26 +16,23 @@ link_style = {
 }
 
 dropdown_style = {
-    'font-size': '1.5em',
+    'font-size': '1em',
 }
 
 nav_links = dbc.Row(
     [
-        dbc.Col(dcc.Link('Indicators', href='/analyze/indicators', style=link_style)),
-        dbc.DropdownMenu(
-            [
-                dbc.DropdownMenuItem(
-                    dbc.Col(dcc.Link('Equities', href='/analyze/equities', style=dropdown_style)),                    
-                ),
-                dbc.DropdownMenuItem(
-                    dbc.Col(dcc.Link('Fixed Income', href='/analyze/fixed_income', style=dropdown_style)),
-                )
-            ],
-            label="Securities",
-            nav=True,
-            style=link_style,
-        ),
-        dbc.Col(dcc.Link('Home', href='/', style=link_style)),
+        dbc.Col(
+            dcc.Link(
+                'Indicators', href='/analyze/indicators', style=link_style)),
+        dbc.Col(
+            dcc.Link(
+                'Securities', href='/analyze/securities', style=link_style)),
+        dbc.Col(
+            dcc.Link('Government',
+                     href='/analyze/government-finance',
+                     style=link_style)),
+        dbc.Col(dcc.Link('BOP', href='/analyze/bop', style=link_style)),
+        dbc.Col(dcc.Link('Trades', href='/analyze/trades', style=link_style)),
     ],
     className="ml-auto flex mt-3 mt-md-0",
     align="center",

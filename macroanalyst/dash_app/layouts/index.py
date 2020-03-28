@@ -14,6 +14,9 @@ index = dbc.Jumbotron(
     dbc.Container(
         [
             html.H1("Welcome", className="display-4"),
+            html.Div(id='intermediate-value',
+                             style={'display': 'none'},
+                             children='index'),
             html.P(
                 "Use the links above or below to navigate to any section of the application.",
                 className="lead",

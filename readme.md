@@ -114,16 +114,26 @@ These will need to be graphed on the same chart. Giving also a chance to downloa
 - Trades Exports
 
 ## Issue Log
+APIs and data polishing/formatting
 - Fix Investing.com links to be scraped and stored in database for quick access.
 - Format .xls and .xlsx to dataframe. Create separate scripts by country.
 - Fix Swedish SCB API to download .csv formatted data
+- Add Trades section
+- Format BOP data across countries
+- Format Central Bank Balance Sheet
+
+UI Development
 - Add descriptive statistics histogram
-- Divide charts by type in separate tab groups (See above)
+- Add Trades data
+- Fix default chart not showing when loading page
 - Fix Bollinger Bands and SMAs not showing correctly 
 - Synronize date range sliders with % change chart
-- Design and format BOP chart
-- Design and plot Central Bank Balance Sheet
-- (Ongoing) Add more countries and data
+- Fix date range showing only from 2015 by default for all indicators 
+- Add UK charts to DB
+
+Design
+- Design BOP chart
+- Design Central Bank Balance Sheet
 
 ## Ideas Log
 - Business cycle meter. Scorecards the level of inflation/deflation currently present in the analysed country
